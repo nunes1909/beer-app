@@ -3,6 +3,12 @@ plugins {
     id 'org.jetbrains.kotlin.jvm'
 }
 
+dependencies {
+    def koin_version= "3.2.2"
+    implementation "io.insert-koin:koin-core:$koin_version"
+    implementation "io.insert-koin:koin-android:$koin_version"
+}
+
 java {
     sourceCompatibility = JavaVersion.VERSION_1_7
     targetCompatibility = JavaVersion.VERSION_1_7
