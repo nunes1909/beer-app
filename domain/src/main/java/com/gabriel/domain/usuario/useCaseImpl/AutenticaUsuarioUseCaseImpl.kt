@@ -5,10 +5,11 @@ import com.gabriel.domain.usuario.repository.AutenticaUsuarioRepository
 import com.gabriel.domain.usuario.repository.CadastraUsuarioRepository
 import com.gabriel.domain.usuario.useCase.AutenticaUsuarioUseCase
 import com.gabriel.domain.usuario.useCase.CadastraUsuarioUseCase
+import com.gabriel.domain.util.resource.ResourceState
 
 class AutenticaUsuarioUseCaseImpl(private val repository: AutenticaUsuarioRepository) :
     AutenticaUsuarioUseCase {
-    override suspend fun autenticaUsuario(usuario: Usuario): Boolean {
+    override suspend fun autenticaUsuario(usuario: Usuario): ResourceState<Boolean> {
         return repository.autenticaUsuario(usuario)
     }
 }
