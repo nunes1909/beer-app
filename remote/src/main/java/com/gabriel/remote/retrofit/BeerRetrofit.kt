@@ -2,7 +2,7 @@ package com.gabriel.remote.retrofit
 
 import com.gabriel.remote.beer.service.GetAllBeersService
 import com.gabriel.remote.beer.service.GetSingleBeerService
-import com.gabriel.strategy.constants.ConstantsUtil.BASE_URL
+import com.gabriel.domain.util.constants.ConstantsUtil.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

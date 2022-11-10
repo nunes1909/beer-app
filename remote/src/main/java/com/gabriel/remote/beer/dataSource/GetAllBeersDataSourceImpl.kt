@@ -7,8 +7,8 @@ import com.gabriel.domain.util.resource.ResourceState
 import com.gabriel.remote.beer.mapper.BeerRemoteMapper
 import com.gabriel.remote.beer.model.BeerRemote
 import com.gabriel.remote.beer.service.GetAllBeersService
-import com.gabriel.strategy.constants.ConstantsUtil.MSG_GET_ALL_BEERS_DS
-import com.gabriel.strategy.constants.ConstantsUtil.TAG_GET_ALL_BEERS_DS
+import com.gabriel.domain.util.constants.ConstantsUtil.MSG_GET_ALL_BEERS_DS
+import com.gabriel.domain.util.constants.ConstantsUtil.TAG_GET_ALL_BEERS_DS
 import retrofit2.Response
 import java.io.IOException
 

@@ -1,4 +1,4 @@
-package com.gabriel.strategy.constants
+package com.gabriel.domain.util.constants
 
 object ConstantsUtil {
     const val BASE_URL = "https://api.punkapi.com/v2/"
