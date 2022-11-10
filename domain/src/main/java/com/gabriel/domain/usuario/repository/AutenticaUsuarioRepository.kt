@@ -2,6 +2,6 @@ package com.gabriel.domain.usuario.repository
 
 import com.gabriel.domain.usuario.model.Usuario
 
-interface CadastraUsuarioRepository {
-    suspend fun cadastraUsuario(usuario: Usuario): Boolean
+interface AutenticaUsuarioRepository {
+    suspend fun autenticaUsuario(usuario: Usuario): Boolean
 }
