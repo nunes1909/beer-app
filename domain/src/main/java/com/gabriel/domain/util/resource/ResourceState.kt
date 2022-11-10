@@ -1,4 +1,4 @@
-package com.gabriel.strategy.resource
+package com.gabriel.domain.util.resource
 
 sealed class ResourceState<T>(
     val data: T? = null,
