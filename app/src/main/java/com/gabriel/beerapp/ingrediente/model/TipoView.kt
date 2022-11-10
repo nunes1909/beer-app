@@ -1,4 +1,5 @@
 package com.gabriel.beerapp.ingrediente.model
 
-class TipoView {
-}
+data class TipoView(
+    val name: String? = null
+)
