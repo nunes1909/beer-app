@@ -11,8 +11,11 @@ fun Fragment.toast(mensagem: String, duration: Int = Toast.LENGTH_LONG) {
     Toast.makeText(requireContext(), mensagem, duration).show()
 }
 
-fun View.snack(mensagem: String, duration: Int = Snackbar.LENGTH_LONG) {
-    Snackbar.make(this, mensagem, duration).show()
+fun Fragment.snack(view: View, mensagem: String, duration: Int = Snackbar.LENGTH_LONG) {
+    val snackbar = Snackbar.make(view, mensagem, duration)
+    snackbar.setBackgroundTint(resources.getColor(android.R.color.holo_red_dark))
+    snackbar.setAction("OK") {}
+    snackbar.show()
 }
 
 fun View.show() {

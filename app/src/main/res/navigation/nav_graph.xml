@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/beersFragment">
+    app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/beersFragment"
         android:name="com.gabriel.beerapp.ui.view.beers.BeersFragment"
@@ -35,4 +35,29 @@
             android:name="beerView"
             app:argType="com.gabriel.beerapp.beer.model.BeerView" />
     </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        tools:layout="@layout/fragment_login"
+        android:name="com.gabriel.beerapp.ui.view.login.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/acaoLoginParaCadastro"
+            app:destination="@id/cadastroFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/cadastroFragment"
+        tools:layout="@layout/fragment_cadastro"
+        android:name="com.gabriel.beerapp.ui.view.cadastro.CadastroFragment"
+        android:label="CadastroFragment" />
+    <action
+        android:id="@+id/acaoGlobalParaLogin"
+        app:destination="@id/loginFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
 </navigation>
