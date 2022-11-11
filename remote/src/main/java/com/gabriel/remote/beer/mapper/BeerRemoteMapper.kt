@@ -15,6 +15,7 @@ class BeerRemoteMapper : RemoteMapper<BeerRemote, BeerData> {
             tagline = type.tagline,
             firstBrewed = type.firstBrewed,
             description = type.description,
+            imageUrl = type.imageUrl,
             abv = type.abv,
             ingredients = mapper.mapToDataNonNull(type.ingredients!!),
             brewersTips = type.brewersTips
@@ -28,6 +29,7 @@ class BeerRemoteMapper : RemoteMapper<BeerRemote, BeerData> {
             tagline = type.tagline,
             firstBrewed = type.firstBrewed,
             description = type.description,
+            imageUrl = type.imageUrl,
             abv = type.abv,
             ingredients = mapper.mapToRemoteNonNull(type.ingredients!!),
             brewersTips = type.brewersTips

@@ -19,6 +19,9 @@ data class BeerRemote(
     @SerializedName("description")
     val description: String? = null,
 
+    @SerializedName("image_url")
+    val imageUrl: String? = null,
+
     // porcentagem alcool
     @SerializedName("abv")
     val abv: Double? = null,

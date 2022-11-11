@@ -15,6 +15,7 @@ class BeerViewMapper : ViewMapper<BeerView, Beer> {
             tagline = type.tagline,
             firstBrewed = type.firstBrewed,
             description = type.description,
+            imageUrl = type.imageUrl,
             abv = type.abv,
             ingredients = mapper.mapToDomainNonNull(type.ingredients!!),
             brewersTips = type.brewersTips
@@ -28,6 +29,7 @@ class BeerViewMapper : ViewMapper<BeerView, Beer> {
             tagline = type.tagline,
             firstBrewed = type.firstBrewed,
             description = type.description,
+            imageUrl = type.imageUrl,
             abv = type.abv,
             ingredients = mapper.mapToViewNonNull(type.ingredients!!),
             brewersTips = type.brewersTips
