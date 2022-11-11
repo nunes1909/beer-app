@@ -17,7 +17,7 @@ class BeerDataMapper : DataMapper<BeerData, Beer> {
             description = type.description,
             imageUrl = type.imageUrl,
             abv = type.abv,
-            ingredients = mapper.mapToDomainNonNull(type.ingredients!!),
+//            ingredients = mapper.mapToDomainNonNull(type.ingredients!!),
             brewersTips = type.brewersTips
         )
     }

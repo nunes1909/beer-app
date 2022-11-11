@@ -31,7 +31,7 @@ class BeerViewMapper : ViewMapper<BeerView, Beer> {
             description = type.description,
             imageUrl = type.imageUrl,
             abv = type.abv,
-            ingredients = mapper.mapToViewNonNull(type.ingredients!!),
+//            ingredients = mapper.mapToViewNonNull(type.ingredients!!),
             brewersTips = type.brewersTips
         )
     }

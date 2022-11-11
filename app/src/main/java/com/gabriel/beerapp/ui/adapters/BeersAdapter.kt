@@ -5,8 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.gabriel.beerapp.beer.model.BeerView
 import com.gabriel.beerapp.databinding.ItemBeersBinding
+import com.gabriel.beerapp.util.extensions.limitValue
+import com.gabriel.beerapp.util.extensions.tentaCarregar
 
 class BeersAdapter : RecyclerView.Adapter<BeersAdapter.BeerViewHolder>() {
 
@@ -19,7 +22,14 @@ class BeersAdapter : RecyclerView.Adapter<BeersAdapter.BeerViewHolder>() {
         }
 
         override fun areContentsTheSame(oldItem: BeerView, newItem: BeerView): Boolean {
-            return oldItem.id == newItem.id
+            return oldItem.id == newItem.id &&
+                    oldItem.name == newItem.name &&
+                    oldItem.tagline == newItem.tagline &&
+                    oldItem.firstBrewed == newItem.firstBrewed &&
+                    oldItem.description == newItem.description &&
+                    oldItem.imageUrl == newItem.imageUrl &&
+                    oldItem.abv == newItem.abv &&
+                    oldItem.brewersTips == newItem.brewersTips
         }
     }
 
@@ -40,7 +50,9 @@ class BeersAdapter : RecyclerView.Adapter<BeersAdapter.BeerViewHolder>() {
     override fun onBindViewHolder(holder: BeerViewHolder, position: Int) {
         val beer = beers[position]
         holder.binding.apply {
-
+            ivBannerItemBeer.tentaCarregar(beer.imageUrl)
+            tvTitleItemBeer.text = beer.name?.limitValue(20, true)
+            tvDescriptionItemBeer.text = beer.tagline
         }
 
         holder.itemView.setOnClickListener {

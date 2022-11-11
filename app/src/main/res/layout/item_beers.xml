@@ -2,9 +2,9 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="170dp"
+    android:layout_width="match_parent"
     android:layout_height="250dp"
-    android:layout_margin="12dp"
+    android:layout_margin="16dp"
     app:cardCornerRadius="10dp"
     app:cardElevation="10dp">
 
@@ -16,8 +16,9 @@
             android:id="@+id/ivBannerItemBeer"
             android:layout_width="0dp"
             android:layout_height="170dp"
+            android:background="#c1c1c1"
             android:contentDescription="@string/imagem_item_beers"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -25,11 +26,13 @@
 
         <TextView
             android:id="@+id/tvTitleItemBeer"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_margin="8dp"
+            android:textAlignment="center"
             android:textColor="#FF9800"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/tvDescriptionItemBeer"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ivBannerItemBeer"
@@ -37,14 +40,16 @@
 
         <TextView
             android:id="@+id/tvDescriptionItemBeer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:textAlignment="center"
             android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/tvTitleItemBeer"
             app:layout_constraintStart_toStartOf="@id/tvTitleItemBeer"
             app:layout_constraintTop_toBottomOf="@id/tvTitleItemBeer"
-            tools:text="O puro malte gaúcho" />
+            tools:text="O puro malte gaúchasdasdasdasdasdasdaso" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

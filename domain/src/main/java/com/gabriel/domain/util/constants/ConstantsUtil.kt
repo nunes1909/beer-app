@@ -11,5 +11,7 @@ object ConstantsUtil {
     const val TAG_GET_SINGLE_BEERS_DS = "GetSingleBeer"
     const val MSG_GET_SINGLE_BEERS_DS = "GetSingleBeerDataSourceImpl/getSingleBeer: "
 
+    const val TAG_BEERS_FRAGMENT = "BeersFragment"
+
     const val KEY_BOTTOM_NAV = "exibeBottomNav"
 }
