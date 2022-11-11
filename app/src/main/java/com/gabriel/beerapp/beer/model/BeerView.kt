@@ -1,6 +1,7 @@
 package com.gabriel.beerapp.beer.model
 
 import com.gabriel.beerapp.ingrediente.model.IngredientesView
+import java.io.Serializable
 
 data class BeerView(
     val id: Int? = null,
@@ -14,4 +15,4 @@ data class BeerView(
     val ingredients: List<IngredientesView>? = null,
     // dicas cervejeiros
     val brewersTips: String? = null
-)
+) : Serializable

@@ -1,4 +1,4 @@
-package com.gabriel.beerapp.ui.adapters
+package com.gabriel.beerapp.ui.view.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

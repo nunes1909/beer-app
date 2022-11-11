@@ -1,4 +1,4 @@
-package com.gabriel.beerapp.ui.activity
+package com.gabriel.beerapp.ui.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
