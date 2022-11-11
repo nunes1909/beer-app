@@ -84,7 +84,7 @@ class DetalhesFragment : BaseFragment<FragmentDetalhesBinding, DetalhesViewModel
     private fun configuraClickAdapter() {
         adapter.setBeerOnClickListener { beerView ->
             val action = DetalhesFragmentDirections.acaoSemelhantesParaDetalhes(beerView)
-            findNavController().navigate(action)
+            controller.navigate(action)
         }
     }
 

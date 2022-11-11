@@ -1,8 +1,7 @@
 package com.gabriel.beerapp.ui.view.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.findNavController
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import com.gabriel.beerapp.R
 import com.gabriel.beerapp.databinding.ActivityMainBinding

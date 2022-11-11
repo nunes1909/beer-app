@@ -61,7 +61,7 @@ class CadastroFragment : BaseFragment<FragmentCadastroBinding, CadastroViewModel
                 is ResourceState.Success -> {
                     toast("Cadastro realizado com sucesso.")
                     val action = CadastroFragmentDirections.acaoGlobalParaLogin()
-                    findNavController().navigate(action)
+                    controller.navigate(action)
                 }
                 is ResourceState.Error -> {
                     toast(resource.message!!)

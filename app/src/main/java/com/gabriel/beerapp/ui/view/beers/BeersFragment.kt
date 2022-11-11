@@ -46,7 +46,7 @@ class BeersFragment : BaseFragment<FragmentBeersBinding, BeersViewModel>() {
     private fun configuraClickAdapter() {
         adapter.setBeerOnClickListener { beerView ->
             val action = BeersFragmentDirections.acaoBeersParaDetalhes(beerView)
-            findNavController().navigate(action)
+            controller.navigate(action)
         }
     }
 
