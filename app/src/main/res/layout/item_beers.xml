@@ -36,12 +36,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ivBannerItemBeer"
+            app:layout_constraintVertical_chainStyle="packed"
             tools:text="Polar" />
 
         <TextView
             android:id="@+id/tvDescriptionItemBeer"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:textAlignment="center"
             android:textSize="12sp"

@@ -3,4 +3,8 @@
     <string name="imagem_item_beers">Imagem item beers</string>
     <string name="pesquise_cerveja">Pesquise aqui uma cerveja</string>
     <string name="imagem_detalhes">Imagem detalhes</string>
+    <string name="fabricado_em">Fabricado em:</string>
+    <string name="teor_alcoolico">Teor alcoólico:</string>
+    <string name="dicas_comidas">Dicas de Comidas:</string>
+    <string name="dicas_cervejeiros">Dicas de Cervejeiros:</string>
 </resources>
