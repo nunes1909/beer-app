@@ -1,7 +1,5 @@
 package com.gabriel.remote.beer.model
 
-import com.gabriel.remote.ingrediente.model.IngredientesRemote
-import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 data class BeerRemote(
@@ -27,8 +25,8 @@ data class BeerRemote(
     @SerializedName("abv")
     val abv: Double? = null,
 
-//    @SerializedName("ingredients")
-//    val ingredients: List<IngredientesRemote>? = null,
+    @SerializedName("food_pairing")
+    val foodPairing: List<String>? = null,
 
     // dicas cervejeiros
     @SerializedName("brewers_tips")
