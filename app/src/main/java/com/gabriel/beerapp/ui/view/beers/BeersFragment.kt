@@ -69,23 +69,17 @@ class BeersFragment : BaseFragment<FragmentBeersBinding, BeersViewModel>() {
     }
 
     private fun observerBeers() = lifecycleScope.launch {
-        viewModel.list.collect { resourceView ->
-            when (resourceView) {
+        viewModel.list.collect { resource ->
+            when (resource) {
                 is ResourceState.Success -> {
-                    exibeBeers(resourceView)
+                    adapter.beers = resource.data!!
                 }
                 is ResourceState.Error -> {
-                    toast("Um erro ocorreu.")
-                    Log.e(TAG_BEERS_FRAGMENT, "Error -> ${resourceView.cod}/${resourceView.message}")
+                    toast("Não foi possível obter as Beers.")
+                    Log.e(TAG_BEERS_FRAGMENT, "Error -> ${resource.cod}/${resource.message}")
                 }
                 else -> {}
             }
-        }
-    }
-
-    private fun exibeBeers(resource: ResourceState<List<BeerView>>) {
-        resource.data?.let {
-            adapter.beers = it
         }
     }
 
