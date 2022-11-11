@@ -4,12 +4,7 @@ import com.gabriel.data.usuario.dataSource.CadastraUsuarioDataSource
 import com.gabriel.data.usuario.model.UsuarioData
 import com.gabriel.domain.util.resource.ResourceState
 import com.gabriel.remote.usuario.validate.ValidaUsuarioFirebase
-import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.AuthResult
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
-import com.google.firebase.auth.FirebaseAuthUserCollisionException
 
 class CadastraUsuarioDataSourceImpl(
     private val firebaseAuth: FirebaseAuth,

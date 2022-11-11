@@ -14,7 +14,6 @@ class ValidaUsuarioFirebase {
             } else {
                 catchErrorCadastro(task.exception)
             }
-            catchErrorCadastro(task.exception)
             ResourceState.Error(data = false, message = mensagem)
         }
 
