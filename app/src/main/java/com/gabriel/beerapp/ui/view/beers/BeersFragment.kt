@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.gabriel.beerapp.beer.model.BeerView
 import com.gabriel.beerapp.databinding.FragmentBeersBinding
@@ -28,6 +29,7 @@ class BeersFragment : BaseFragment<FragmentBeersBinding, BeersViewModel>() {
         super.onViewCreated(view, savedInstanceState)
         configuraRecycler()
         configuraPesquisa()
+        configuraClickAdapter()
         observerBeers()
     }
 
@@ -39,6 +41,13 @@ class BeersFragment : BaseFragment<FragmentBeersBinding, BeersViewModel>() {
 
     private fun configuraPesquisa() {
         binding.etPesquisa.addTextChangedListener(searchBeersWatcher())
+    }
+
+    private fun configuraClickAdapter() {
+        adapter.setBeerOnClickListener { beerView ->
+            val action = BeersFragmentDirections.acaoBeersParaDetalhes(beerView)
+            findNavController().navigate(action)
+        }
     }
 
     private fun searchBeersWatcher() = object : TextWatcher {

@@ -39,3 +39,8 @@ fun ImageView.tentaCarregar(url: String? = null) {
         placeholder(androidx.appcompat.R.color.material_grey_600)
     }
 }
+
+fun rand(start: Int, end: Int): Int {
+    require(start <= end) { "Illegal Argument" }
+    return (start..end).random()
+}

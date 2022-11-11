@@ -32,7 +32,7 @@
             app:popUpTo="@id/detalhesFragment"
             app:popUpToInclusive="true" />
         <argument
-            android:name="BeerView"
+            android:name="beerView"
             app:argType="com.gabriel.beerapp.beer.model.BeerView" />
     </fragment>
 </navigation>
