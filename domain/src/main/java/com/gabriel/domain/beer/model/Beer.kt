@@ -1,7 +1,5 @@
 package com.gabriel.domain.beer.model
 
-import com.gabriel.domain.ingrediente.model.Ingredientes
-
 data class Beer(
     val id: Int? = null,
     val name: String? = null,
@@ -11,7 +9,7 @@ data class Beer(
     val imageUrl: String? = null,
     // porcentagem alcool
     val abv: Double? = null,
-    val ingredients: List<Ingredientes>? = null,
+    val foodPairing: List<String>? = null,
     // dicas cervejeiros
     val brewersTips: String? = null
 )

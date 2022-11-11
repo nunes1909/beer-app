@@ -2,12 +2,9 @@ package com.gabriel.remote.beer.mapper
 
 import com.gabriel.data.beer.model.BeerData
 import com.gabriel.remote.beer.model.BeerRemote
-import com.gabriel.remote.ingrediente.mapper.IngredienteRemoteMapper
 import com.gabriel.remote.util.base.RemoteMapper
 
 class BeerRemoteMapper : RemoteMapper<BeerRemote, BeerData> {
-    private val mapper = IngredienteRemoteMapper()
-
     override fun mapToData(type: BeerRemote): BeerData {
         return BeerData(
             id = type.id,
@@ -17,7 +14,7 @@ class BeerRemoteMapper : RemoteMapper<BeerRemote, BeerData> {
             description = type.description,
             imageUrl = type.imageUrl,
             abv = type.abv,
-//            ingredients = mapper.mapToDataNonNull(type.ingredients!!),
+            foodPairing = type.foodPairing,
             brewersTips = type.brewersTips
         )
     }
@@ -31,7 +28,7 @@ class BeerRemoteMapper : RemoteMapper<BeerRemote, BeerData> {
             description = type.description,
             imageUrl = type.imageUrl,
             abv = type.abv,
-//            ingredients = mapper.mapToRemoteNonNull(type.ingredients!!),
+            foodPairing = type.foodPairing,
             brewersTips = type.brewersTips
         )
     }

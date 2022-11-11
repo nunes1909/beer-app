@@ -8,10 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.gabriel.beerapp.beer.model.BeerView
 import com.gabriel.beerapp.databinding.FragmentBeersBinding
-import com.gabriel.beerapp.ui.adapters.BeersAdapter
+import com.gabriel.beerapp.ui.view.adapters.BeersAdapter
 import com.gabriel.beerapp.util.base.BaseFragment
 import com.gabriel.beerapp.util.extensions.toast
 import com.gabriel.domain.util.constants.ConstantsUtil.TAG_BEERS_FRAGMENT
@@ -28,6 +29,7 @@ class BeersFragment : BaseFragment<FragmentBeersBinding, BeersViewModel>() {
         super.onViewCreated(view, savedInstanceState)
         configuraRecycler()
         configuraPesquisa()
+        configuraClickAdapter()
         observerBeers()
     }
 
@@ -39,6 +41,13 @@ class BeersFragment : BaseFragment<FragmentBeersBinding, BeersViewModel>() {
 
     private fun configuraPesquisa() {
         binding.etPesquisa.addTextChangedListener(searchBeersWatcher())
+    }
+
+    private fun configuraClickAdapter() {
+        adapter.setBeerOnClickListener { beerView ->
+            val action = BeersFragmentDirections.acaoBeersParaDetalhes(beerView)
+            findNavController().navigate(action)
+        }
     }
 
     private fun searchBeersWatcher() = object : TextWatcher {
@@ -60,23 +69,17 @@ class BeersFragment : BaseFragment<FragmentBeersBinding, BeersViewModel>() {
     }
 
     private fun observerBeers() = lifecycleScope.launch {
-        viewModel.list.collect { resourceView ->
-            when (resourceView) {
+        viewModel.list.collect { resource ->
+            when (resource) {
                 is ResourceState.Success -> {
-                    exibeBeers(resourceView)
+                    adapter.beers = resource.data!!
                 }
                 is ResourceState.Error -> {
-                    toast("Um erro ocorreu.")
-                    Log.e(TAG_BEERS_FRAGMENT, "Error -> ${resourceView.cod}/${resourceView.message}")
+                    toast("Não foi possível obter as Beers.")
+                    Log.e(TAG_BEERS_FRAGMENT, "Error -> ${resource.cod}/${resource.message}")
                 }
                 else -> {}
             }
-        }
-    }
-
-    private fun exibeBeers(resource: ResourceState<List<BeerView>>) {
-        resource.data?.let {
-            adapter.beers = it
         }
     }
 

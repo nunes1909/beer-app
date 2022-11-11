@@ -1,13 +1,10 @@
 package com.gabriel.beerapp.beer.mapper
 
 import com.gabriel.beerapp.beer.model.BeerView
-import com.gabriel.beerapp.ingrediente.mapper.IngredienteViewMapper
 import com.gabriel.beerapp.util.base.ViewMapper
 import com.gabriel.domain.beer.model.Beer
 
 class BeerViewMapper : ViewMapper<BeerView, Beer> {
-    private val mapper = IngredienteViewMapper()
-
     override fun mapToDomain(type: BeerView): Beer {
         return Beer(
             id = type.id,
@@ -17,7 +14,7 @@ class BeerViewMapper : ViewMapper<BeerView, Beer> {
             description = type.description,
             imageUrl = type.imageUrl,
             abv = type.abv,
-            ingredients = mapper.mapToDomainNonNull(type.ingredients!!),
+            foodPairing = type.foodPairing,
             brewersTips = type.brewersTips
         )
     }
@@ -31,7 +28,7 @@ class BeerViewMapper : ViewMapper<BeerView, Beer> {
             description = type.description,
             imageUrl = type.imageUrl,
             abv = type.abv,
-//            ingredients = mapper.mapToViewNonNull(type.ingredients!!),
+            foodPairing = type.foodPairing,
             brewersTips = type.brewersTips
         )
     }
