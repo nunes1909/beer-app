@@ -8,6 +8,7 @@ data class Beer(
     val tagline: String? = null,
     val firstBrewed: String? = null,
     val description: String? = null,
+    val imageUrl: String? = null,
     // porcentagem alcool
     val abv: Double? = null,
     val ingredients: List<Ingredientes>? = null,

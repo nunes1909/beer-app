@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivDetalhes"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_margin="18dp"
+        android:contentDescription="@string/imagem_detalhes"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <TextView
+        android:id="@+id/tvTitleDetalhes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/ivDetalhes"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/ivDetalhes"
+        app:layout_constraintTop_toBottomOf="@id/ivDetalhes"
+        tools:text="Polar" />
+
+    <TextView
+        android:id="@+id/tvTaglineDetalhes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/ivDetalhes"
+        app:layout_constraintStart_toStartOf="@id/tvTitleDetalhes"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleDetalhes"
+        tools:text="Lorem Ipsum is simply dummy text of the
+        printing and typesetting industry." />
+
+    <TextView
+        android:id="@+id/tvDescriptionDetalhes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@id/tvTaglineDetalhes"
+        app:layout_constraintStart_toStartOf="@id/tvTaglineDetalhes"
+        app:layout_constraintTop_toBottomOf="@id/tvTaglineDetalhes"
+        tools:text="Lorem Ipsum is simply dummy text of the
+        printing and typesetting industry." />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

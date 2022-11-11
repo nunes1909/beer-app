@@ -1,5 +1,7 @@
 package com.gabriel.remote.util.di
 
+import com.gabriel.data.beer.dataSource.GetAllBeersDataSource
+import com.gabriel.data.beer.dataSource.GetSingleBeerDataSource
 import com.gabriel.remote.beer.dataSource.GetAllBeersDataSourceImpl
 import com.gabriel.remote.beer.dataSource.GetSingleBeerDataSourceImpl
 import com.gabriel.remote.beer.mapper.BeerRemoteMapper
@@ -32,13 +34,13 @@ fun getRemoteModules() = module {
     // endregion
 
     // region data source
-    factory {
+    factory<GetAllBeersDataSource> {
         GetAllBeersDataSourceImpl(
             service = get(),
             mapper = get()
         )
     }
-    factory {
+    factory<GetSingleBeerDataSource> {
         GetSingleBeerDataSourceImpl(
             service = get(),
             mapper = get()

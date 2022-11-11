@@ -6,7 +6,7 @@ import com.gabriel.domain.beer.useCase.GetAllBeersUseCase
 import com.gabriel.domain.util.resource.ResourceState
 
 class GetAllBeersUseCaseImpl(private val repository: GetAllBeersRepository) : GetAllBeersUseCase {
-    override suspend fun getAll(): ResourceState<List<Beer>> {
-        return repository.getAll()
+    override suspend fun getAll(query: String?): ResourceState<List<Beer>> {
+        return repository.getAll(query)
     }
 }

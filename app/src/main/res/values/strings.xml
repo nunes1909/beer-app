@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Beer App</string>
+    <string name="imagem_item_beers">Imagem item beers</string>
+    <string name="pesquise_cerveja">Pesquise aqui uma cerveja</string>
+    <string name="imagem_detalhes">Imagem detalhes</string>
 </resources>
