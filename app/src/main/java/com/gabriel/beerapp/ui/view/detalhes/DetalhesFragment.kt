@@ -10,13 +10,12 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import coil.load
-import com.gabriel.beerapp.beer.model.BeerView
 import com.gabriel.beerapp.databinding.FragmentDetalhesBinding
 import com.gabriel.beerapp.ui.view.adapters.BeersAdapter
 import com.gabriel.beerapp.util.base.BaseFragment
 import com.gabriel.beerapp.util.extensions.rand
 import com.gabriel.beerapp.util.extensions.toast
-import com.gabriel.domain.util.constants.ConstantsUtil
+import com.gabriel.domain.util.constants.ConstantsUtil.TAG_DETALHES_FRAGMENT
 import com.gabriel.domain.util.resource.ResourceState
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -73,7 +72,7 @@ class DetalhesFragment : BaseFragment<FragmentDetalhesBinding, DetalhesViewModel
                 is ResourceState.Error -> {
                     toast("Não foi possível as Beers semelhantes.")
                     Log.e(
-                        ConstantsUtil.TAG_BEERS_FRAGMENT,
+                        TAG_DETALHES_FRAGMENT,
                         "Error -> ${resource.cod}/${resource.message}"
                     )
                 }
