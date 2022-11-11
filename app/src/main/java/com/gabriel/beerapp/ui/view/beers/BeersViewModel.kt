@@ -23,8 +23,8 @@ class BeersViewModel(
     private val _list = MutableStateFlow<ResourceState<List<BeerView>>>(ResourceState.Loading())
     val list: StateFlow<ResourceState<List<BeerView>>> = _list
 
-    private fun getAll() = viewModelScope.launch {
-        val resourceDomain = getAllBeersUseCase.getAll()
+    fun getAll(query: String? = null) = viewModelScope.launch {
+        val resourceDomain = getAllBeersUseCase.getAll(query)
         _list.value = validateResource(resourceDomain)
     }
 

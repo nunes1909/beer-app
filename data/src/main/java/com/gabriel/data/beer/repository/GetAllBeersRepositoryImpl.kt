@@ -10,8 +10,8 @@ class GetAllBeersRepositoryImpl(
     private val dataStore: GetAllBeersDataStore,
     private val mapper: BeerDataMapper
 ) : GetAllBeersRepository {
-    override suspend fun getAll(): ResourceState<List<Beer>> {
-        val resourceData = dataStore.getAll()
+    override suspend fun getAll(query: String?): ResourceState<List<Beer>> {
+        val resourceData = dataStore.getAll(query)
         if (resourceData.data != null) {
             val resultDomain = mapper.mapToDomainNonNull(resourceData.data!!)
             return ResourceState.Success(resultDomain)

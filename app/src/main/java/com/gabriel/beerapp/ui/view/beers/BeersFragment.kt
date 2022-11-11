@@ -1,6 +1,8 @@
 package com.gabriel.beerapp.ui.view.beers
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -25,13 +27,38 @@ class BeersFragment : BaseFragment<FragmentBeersBinding, BeersViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         configuraRecycler()
+        configuraPesquisa()
         observerBeers()
     }
 
-    private fun configuraRecycler() {
-        binding.rvBeers.adapter = adapter
-        binding.rvBeers.layoutManager = GridLayoutManager(requireContext(), 2)
+    private fun configuraRecycler() = with(binding) {
+        rvBeers.adapter = adapter
+        rvBeers.layoutManager = GridLayoutManager(requireContext(), 2)
+        rvBeers.requestFocus()
     }
+
+    private fun configuraPesquisa() {
+        binding.etPesquisa.addTextChangedListener(searchBeersWatcher())
+    }
+
+    private fun searchBeersWatcher() = object : TextWatcher {
+        override fun onTextChanged(query: CharSequence, p1: Int, p2: Int, p3: Int) {
+            if (query.isNotEmpty()) {
+                viewModel.getAll(query.toString())
+            } else {
+                viewModel.getAll()
+            }
+        }
+
+        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            // Sem implementação
+        }
+
+        override fun afterTextChanged(p0: Editable?) {
+            // Sem implementação
+        }
+    }
+
     private fun observerBeers() = lifecycleScope.launch {
         viewModel.list.collect { resourceView ->
             when (resourceView) {

@@ -7,7 +7,7 @@ import com.gabriel.domain.util.resource.ResourceState
 
 class GetAllBeersDataStoreImpl(private val dataSource: GetAllBeersDataSource) :
     GetAllBeersDataStore {
-    override suspend fun getAll(): ResourceState<List<BeerData>> {
-        return dataSource.getAll()
+    override suspend fun getAll(query: String?): ResourceState<List<BeerData>> {
+        return dataSource.getAll(query)
     }
 }

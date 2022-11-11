@@ -16,9 +16,9 @@ class GetAllBeersDataSourceImpl(
     private val service: GetAllBeersService,
     private val mapper: BeerRemoteMapper
 ) : GetAllBeersDataSource {
-    override suspend fun getAll(): ResourceState<List<BeerData>> {
+    override suspend fun getAll(query: String?): ResourceState<List<BeerData>> {
         return try {
-            val response = service.getAll()
+            val response = service.getAll(query = query)
             validateResponse(response)
         } catch (t: Throwable) {
             when (t) {

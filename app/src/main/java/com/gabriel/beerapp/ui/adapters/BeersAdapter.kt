@@ -52,7 +52,7 @@ class BeersAdapter : RecyclerView.Adapter<BeersAdapter.BeerViewHolder>() {
         holder.binding.apply {
             ivBannerItemBeer.tentaCarregar(beer.imageUrl)
             tvTitleItemBeer.text = beer.name?.limitValue(20, true)
-            tvDescriptionItemBeer.text = beer.tagline
+            tvDescriptionItemBeer.text = beer.tagline?.limitValue(40, true)
         }
 
         holder.itemView.setOnClickListener {

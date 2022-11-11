@@ -4,5 +4,5 @@ import com.gabriel.data.beer.model.BeerData
 import com.gabriel.domain.util.resource.ResourceState
 
 interface GetAllBeersDataSource {
-    suspend fun getAll(): ResourceState<List<BeerData>>
+    suspend fun getAll(query: String?): ResourceState<List<BeerData>>
 }
