@@ -4,21 +4,25 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.gabriel.beerapp.databinding.FragmentCadastroBinding
+import com.gabriel.beerapp.databinding.FragmentLoginBinding
 import com.gabriel.beerapp.ui.view.cadastro.validaCadastro.ValidaCadastroImpl
 import com.gabriel.beerapp.usuario.model.UsuarioView
 import com.gabriel.beerapp.util.base.BaseFragment
 import com.gabriel.beerapp.util.extensions.snack
 import com.gabriel.beerapp.util.extensions.toast
-import com.gabriel.domain.util.resource.ResourceState
+import com.gabriel.strategy.resource.ResourceState
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class CadastroFragment : BaseFragment<FragmentCadastroBinding, CadastroViewModel>() {
+class CadastroFragment : Fragment() {
 
-    override val viewModel: CadastroViewModel by viewModel()
+    private val binding by lazy { FragmentCadastroBinding.inflate(layoutInflater) }
+    private val controller by lazy { findNavController() }
+    private val viewModel: CadastroViewModel by viewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -58,22 +62,25 @@ class CadastroFragment : BaseFragment<FragmentCadastroBinding, CadastroViewModel
     private fun observerCadastro() = lifecycleScope.launch {
         viewModel.cadastra.collect { resource ->
             when (resource) {
-                is ResourceState.Success -> {
-                    toast("Cadastro realizado com sucesso.")
-                    val action = CadastroFragmentDirections.acaoGlobalParaLogin()
-                    controller.navigate(action)
-                }
-                is ResourceState.Error -> {
-                    toast(resource.message!!)
-                }
+                is ResourceState.Default -> { defineAcaoPosCadastro(resource) }
                 else -> {}
             }
         }
     }
 
-    override fun getViewBinding(
+    private fun defineAcaoPosCadastro(resource: ResourceState<Boolean>) {
+        if (resource.data!!) {
+            toast("Cadastro realizado com sucesso.")
+            val action = CadastroFragmentDirections.acaoGlobalParaLogin()
+            controller.navigate(action)
+        } else {
+            toast(resource.message!!)
+        }
+    }
+
+    override fun onCreateView(
         inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentCadastroBinding =
-        FragmentCadastroBinding.inflate(layoutInflater, container, false)
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View = binding.root
 }

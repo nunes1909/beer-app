@@ -3,7 +3,7 @@ package com.gabriel.data.usuario.dataStoreImpl
 import com.gabriel.data.usuario.dataSource.CadastraUsuarioDataSource
 import com.gabriel.data.usuario.dataStore.CadastraUsuarioDataStore
 import com.gabriel.data.usuario.model.UsuarioData
-import com.gabriel.domain.util.resource.ResourceState
+import com.gabriel.strategy.resource.ResourceState
 
 class CadastraUsuarioDataStoreImpl(private val dataSource: CadastraUsuarioDataSource) :
     CadastraUsuarioDataStore {

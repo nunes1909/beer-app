@@ -4,7 +4,7 @@ import com.gabriel.data.usuario.dataStore.CadastraUsuarioDataStore
 import com.gabriel.data.usuario.mapper.UsuarioDataMapper
 import com.gabriel.domain.usuario.model.Usuario
 import com.gabriel.domain.usuario.repository.CadastraUsuarioRepository
-import com.gabriel.domain.util.resource.ResourceState
+import com.gabriel.strategy.resource.ResourceState
 
 class CadastraUsuarioRepositoryImpl(
     private val dataStore: CadastraUsuarioDataStore,

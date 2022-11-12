@@ -4,7 +4,7 @@ import com.gabriel.data.beer.dataStore.GetSingleBeerDataStore
 import com.gabriel.data.beer.mapper.BeerDataMapper
 import com.gabriel.domain.beer.model.Beer
 import com.gabriel.domain.beer.repository.GetSingleBeerRepository
-import com.gabriel.domain.util.resource.ResourceState
+import com.gabriel.strategy.resource.ResourceState
 
 class GetSingleBeerRepositoryImpl(
     private val dataStore: GetSingleBeerDataStore,

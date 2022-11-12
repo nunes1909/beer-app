@@ -1,20 +1,20 @@
 package com.gabriel.remote.usuario.validate
 
-import com.gabriel.domain.util.resource.ResourceState
+import com.gabriel.strategy.resource.ResourceState
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.*
 
 class ValidaUsuarioFirebase {
     fun validaTask(task: Task<AuthResult>, auth: Boolean) =
         if (task.isSuccessful) {
-            ResourceState.Success(data = true)
+            ResourceState.Default(data = true)
         } else {
             val mensagem = if (auth) {
                 catchErrorAuth(task.exception)
             } else {
                 catchErrorCadastro(task.exception)
             }
-            ResourceState.Error(data = false, message = mensagem)
+            ResourceState.Default(data = false, message = mensagem)
         }
 
     private fun catchErrorCadastro(exception: Exception?): String = when (exception) {

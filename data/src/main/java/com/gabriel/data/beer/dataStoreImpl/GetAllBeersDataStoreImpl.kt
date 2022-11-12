@@ -3,7 +3,7 @@ package com.gabriel.data.beer.dataStoreImpl
 import com.gabriel.data.beer.dataSource.GetAllBeersDataSource
 import com.gabriel.data.beer.dataStore.GetAllBeersDataStore
 import com.gabriel.data.beer.model.BeerData
-import com.gabriel.domain.util.resource.ResourceState
+import com.gabriel.strategy.resource.ResourceState
 
 class GetAllBeersDataStoreImpl(private val dataSource: GetAllBeersDataSource) :
     GetAllBeersDataStore {

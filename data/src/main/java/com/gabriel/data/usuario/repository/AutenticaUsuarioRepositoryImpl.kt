@@ -4,7 +4,7 @@ import com.gabriel.data.usuario.dataStore.AutenticaUsuarioDataStore
 import com.gabriel.data.usuario.mapper.UsuarioDataMapper
 import com.gabriel.domain.usuario.model.Usuario
 import com.gabriel.domain.usuario.repository.AutenticaUsuarioRepository
-import com.gabriel.domain.util.resource.ResourceState
+import com.gabriel.strategy.resource.ResourceState
 
 class AutenticaUsuarioRepositoryImpl(
     private val dataStore: AutenticaUsuarioDataStore,

@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.gabriel.beerapp.usuario.mapper.UsuarioViewMapper
 import com.gabriel.beerapp.usuario.model.UsuarioView
 import com.gabriel.domain.usuario.useCase.CadastraUsuarioUseCase
-import com.gabriel.domain.util.resource.ResourceState
+import com.gabriel.strategy.resource.ResourceState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

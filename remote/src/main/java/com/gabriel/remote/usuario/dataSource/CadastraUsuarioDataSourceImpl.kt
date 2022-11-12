@@ -2,8 +2,8 @@ package com.gabriel.remote.usuario.dataSource
 
 import com.gabriel.data.usuario.dataSource.CadastraUsuarioDataSource
 import com.gabriel.data.usuario.model.UsuarioData
-import com.gabriel.domain.util.resource.ResourceState
 import com.gabriel.remote.usuario.validate.ValidaUsuarioFirebase
+import com.gabriel.strategy.resource.ResourceState
 import com.google.firebase.auth.FirebaseAuth
 
 class CadastraUsuarioDataSourceImpl(
@@ -14,9 +14,18 @@ class CadastraUsuarioDataSourceImpl(
         return try {
             val task = firebaseAuth
                 .createUserWithEmailAndPassword(usuario.email!!, usuario.senha!!)
-            validaUser.validaTask(task = task, auth = false)
+
+            task.addOnSuccessListener {
+
+            }
+
+            task.addOnFailureListener {
+
+            }
+
+            validaUser.validaTask(task = task, auth = false).also { firebaseAuth.signOut() }
         } catch (e: IllegalAccessException) {
-            ResourceState.Error(data = false, message = "E-mail ou senha inválido.")
+            ResourceState.Default(data = false, message = "E-mail ou senha inválido.")
         }
     }
 }

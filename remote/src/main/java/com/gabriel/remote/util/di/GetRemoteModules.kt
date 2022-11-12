@@ -19,6 +19,11 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 
 fun getRemoteModules() = module {
+    // region firebase
+
+    single<FirebaseAuth> { Firebase.auth }
+    // endregion
+
     // region retrofit
     single {
         BeerRetrofit().getOkHttpClient()
@@ -58,9 +63,5 @@ fun getRemoteModules() = module {
             validaUser = ValidaUsuarioFirebase()
         )
     }
-    // endregion
-
-    // region firebase
-    single<FirebaseAuth> { Firebase.auth }
     // endregion
 }

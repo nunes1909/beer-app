@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import coil.load
@@ -15,8 +14,8 @@ import com.gabriel.beerapp.ui.view.adapters.BeersAdapter
 import com.gabriel.beerapp.util.base.BaseFragment
 import com.gabriel.beerapp.util.extensions.rand
 import com.gabriel.beerapp.util.extensions.toast
-import com.gabriel.domain.util.constants.ConstantsUtil.TAG_DETALHES_FRAGMENT
-import com.gabriel.domain.util.resource.ResourceState
+import com.gabriel.strategy.constants.ConstantsUtil.TAG_DETALHES_FRAGMENT
+import com.gabriel.strategy.resource.ResourceState
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
