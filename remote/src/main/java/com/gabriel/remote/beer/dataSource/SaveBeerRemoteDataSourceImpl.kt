@@ -14,13 +14,8 @@ class SaveBeerRemoteDataSourceImpl(
     private val mapper: BeerRemoteMapper
 ) : SaveBeerRemoteDataSource {
     override suspend fun saveBeer(beer: BeerData) {
-        val beerRemote = mapper.mapToRemote(beer)
         val usuarioId = firebaseAuth.currentUser!!.uid
-        firestore.collection(COLECAO_FAVORITOS).add(
-            BeerDocumento(
-                beerId = beerRemote.id,
-                usuarioId = usuarioId
-            )
-        )
+        val beerRemote = mapper.mapToRemote(beer).apply { this.usuarioId = usuarioId }
+        firestore.collection(COLECAO_FAVORITOS).add(beerRemote)
     }
 }

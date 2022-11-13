@@ -5,9 +5,9 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface GetSingleBeerService {
+interface GetBeersByIdService {
     @GET
     suspend fun getSingleBeer(
-        @Query("beerId") beerId: Int
-    ): Response<BeerRemote>
+        @Query("ids") beerId: String
+    ): Response<List<BeerRemote>>
 }

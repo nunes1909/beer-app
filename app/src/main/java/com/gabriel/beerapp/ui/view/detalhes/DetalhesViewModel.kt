@@ -6,6 +6,7 @@ import com.gabriel.beerapp.beer.mapper.BeerViewMapper
 import com.gabriel.beerapp.beer.model.BeerView
 import com.gabriel.domain.beer.model.Beer
 import com.gabriel.domain.beer.useCase.GetAllBeersUseCase
+import com.gabriel.domain.beer.useCase.GetBeersByIdUseCase
 import com.gabriel.domain.beer.useCase.SaveBeerUseCase
 import com.gabriel.strategy.resource.ResourceState
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -15,11 +16,18 @@ import kotlinx.coroutines.launch
 class DetalhesViewModel(
     private val mapper: BeerViewMapper,
     private val getAllBeersUseCase: GetAllBeersUseCase,
+    private val getBeersByIdUseCase: GetBeersByIdUseCase,
     private val saveBeerUseCase: SaveBeerUseCase
 ) : ViewModel() {
 
     private val _list = MutableStateFlow<ResourceState<List<BeerView>>>(ResourceState.Loading())
     val list: StateFlow<ResourceState<List<BeerView>>> = _list
+
+    init {
+        viewModelScope.launch {
+            getBeersByIdUseCase.getBeersById()
+        }
+    }
 
     fun getAll(query: String? = null) = viewModelScope.launch {
         val primeiroNome = resolvePrimeiroNome(query)

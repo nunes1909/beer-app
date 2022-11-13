@@ -19,13 +19,14 @@ fun getViewModules() = module {
     viewModel {
         BeersViewModel(
             mapper = get(),
-            getAllBeersUseCase = get()
+            getAllBeersUseCase = get(),
         )
     }
     viewModel {
         DetalhesViewModel(
             mapper = get(),
             getAllBeersUseCase = get(),
+            getBeersByIdUseCase = get(),
             saveBeerUseCase = get()
         )
     }
