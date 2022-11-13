@@ -8,10 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.gabriel.beerapp.databinding.FragmentCadastroBinding
-import com.gabriel.beerapp.databinding.FragmentLoginBinding
-import com.gabriel.beerapp.ui.view.cadastro.validaCadastro.ValidaCadastroImpl
+import com.gabriel.beerapp.ui.view.cadastro.validaCadastro.ValidaCadastro
 import com.gabriel.beerapp.usuario.model.UsuarioView
-import com.gabriel.beerapp.util.base.BaseFragment
 import com.gabriel.beerapp.util.extensions.snack
 import com.gabriel.beerapp.util.extensions.toast
 import com.gabriel.strategy.resource.ResourceState
@@ -49,7 +47,7 @@ class CadastroFragment : Fragment() {
         val confirmaSenha = etConfirmaSenha.text?.trim().toString()
 
         when (val resource =
-            ValidaCadastroImpl().validaCamposCadastro(email, senha, confirmaSenha)) {
+            ValidaCadastro().validaCamposFormulario(email, senha, confirmaSenha)) {
             is ResourceState.Success -> {
                 viewModel.cadastraUsuario(UsuarioView(email, senha))
             }

@@ -5,6 +5,7 @@ import com.gabriel.data.usuario.model.UsuarioData
 import com.gabriel.remote.usuario.validate.ValidaUsuarioFirebase
 import com.gabriel.strategy.resource.ResourceState
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.runBlocking
 
 class CadastraUsuarioDataSourceImpl(
     private val firebaseAuth: FirebaseAuth,
@@ -12,8 +13,7 @@ class CadastraUsuarioDataSourceImpl(
 ) : CadastraUsuarioDataSource {
     override suspend fun cadastraUsuario(usuario: UsuarioData): ResourceState<Boolean> {
         return try {
-            val task = firebaseAuth
-                .createUserWithEmailAndPassword(usuario.email!!, usuario.senha!!)
+            val task = firebaseAuth.createUserWithEmailAndPassword(usuario.email!!, usuario.senha!!)
             validaUser.validaTask(task = task, auth = false).also { firebaseAuth.signOut() }
         } catch (e: IllegalAccessException) {
             ResourceState.Default(data = false, message = "E-mail ou senha inválido.")

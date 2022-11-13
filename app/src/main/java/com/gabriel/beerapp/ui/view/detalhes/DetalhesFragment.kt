@@ -10,7 +10,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import coil.load
 import com.gabriel.beerapp.databinding.FragmentDetalhesBinding
-import com.gabriel.beerapp.ui.view.adapters.BeersAdapter
+import com.gabriel.beerapp.ui.adapters.BeersAdapter
 import com.gabriel.beerapp.util.base.BaseFragment
 import com.gabriel.beerapp.util.extensions.rand
 import com.gabriel.beerapp.util.extensions.toast
