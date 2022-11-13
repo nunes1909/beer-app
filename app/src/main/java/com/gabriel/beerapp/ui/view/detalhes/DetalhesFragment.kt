@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import coil.load
 import com.gabriel.beerapp.databinding.FragmentDetalhesBinding
 import com.gabriel.beerapp.ui.adapters.BeersAdapter
-import com.gabriel.beerapp.util.base.BaseFragment
+import com.gabriel.beerapp.util.base.BaseFragmentIn
 import com.gabriel.beerapp.util.extensions.rand
 import com.gabriel.beerapp.util.extensions.toast
 import com.gabriel.strategy.constants.ConstantsUtil.TAG_DETALHES_FRAGMENT
@@ -19,7 +19,7 @@ import com.gabriel.strategy.resource.ResourceState
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class DetalhesFragment : BaseFragment<FragmentDetalhesBinding, DetalhesViewModel>() {
+class DetalhesFragment : BaseFragmentIn<FragmentDetalhesBinding, DetalhesViewModel>() {
 
     override val viewModel: DetalhesViewModel by viewModel()
     private val args: DetalhesFragmentArgs by navArgs()

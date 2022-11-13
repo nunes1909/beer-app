@@ -11,14 +11,14 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import com.gabriel.beerapp.databinding.FragmentBeersBinding
 import com.gabriel.beerapp.ui.adapters.BeersAdapter
-import com.gabriel.beerapp.util.base.BaseFragment
+import com.gabriel.beerapp.util.base.BaseFragmentIn
 import com.gabriel.beerapp.util.extensions.toast
 import com.gabriel.strategy.constants.ConstantsUtil.TAG_BEERS_FRAGMENT
 import com.gabriel.strategy.resource.ResourceState
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class BeersFragment : BaseFragment<FragmentBeersBinding, BeersViewModel>() {
+class BeersFragment : BaseFragmentIn<FragmentBeersBinding, BeersViewModel>() {
 
     override val viewModel: BeersViewModel by viewModel()
     private val adapter by lazy { BeersAdapter() }

@@ -13,4 +13,7 @@
     <string name="cadastrar">Cadastrar</string>
     <string name="logar">Logar</string>
     <string name="imagem_login">Imagem Login</string>
+    <string name="home">Home</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="conta">Conta</string>
 </resources>

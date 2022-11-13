@@ -17,48 +17,25 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 
-abstract class BaseFragment<viewBinding : ViewBinding, viewModel : ViewModel> : Fragment() {
+abstract class BaseFragmentOut<viewBinding : ViewBinding, viewModel : ViewModel> : Fragment() {
 
     private var _binding: viewBinding? = null
     protected val binding get() = _binding!!
     protected abstract val viewModel: viewModel
 
     protected val controller by lazy { findNavController() }
-    private val firebaseAuth: FirebaseAuth by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
         configuraVisibilityBottomNav()
-        estaLogado()
     }
 
     private fun configuraVisibilityBottomNav() {
         lifecycleScope.launch {
             requireContext().dataStore.edit { preferences ->
-                preferences[booleanPreferencesKey(KEY_BOTTOM_NAV)] = true
+                preferences[booleanPreferencesKey(KEY_BOTTOM_NAV)] = false
             }
         }
-    }
-
-    private fun estaLogado() {
-        if (firebaseAuth.currentUser == null) {
-            val action = NavGraphDirections.acaoGlobalParaLogin()
-            controller.navigate(action)
-        }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_bar, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.itemLogout) {
-            firebaseAuth.signOut()
-            estaLogado()
-        }
-        return super.onOptionsItemSelected(item)
     }
 
     override fun onCreateView(
