@@ -2,10 +2,8 @@ package com.gabriel.domain.usuario.useCaseImpl
 
 import com.gabriel.domain.usuario.model.Usuario
 import com.gabriel.domain.usuario.repository.AutenticaUsuarioRepository
-import com.gabriel.domain.usuario.repository.CadastraUsuarioRepository
 import com.gabriel.domain.usuario.useCase.AutenticaUsuarioUseCase
-import com.gabriel.domain.usuario.useCase.CadastraUsuarioUseCase
-import com.gabriel.domain.util.resource.ResourceState
+import com.gabriel.strategy.resource.ResourceState
 
 class AutenticaUsuarioUseCaseImpl(private val repository: AutenticaUsuarioRepository) :
     AutenticaUsuarioUseCase {

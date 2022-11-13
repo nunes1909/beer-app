@@ -8,14 +8,14 @@ class UsuarioRemoteMapper : RemoteMapper<UsuarioRemote, UsuarioData> {
     override fun mapToData(type: UsuarioRemote): UsuarioData {
         return UsuarioData(
             email = type.email,
-            senha = type.email
+            senha = type.senha
         )
     }
 
     override fun mapToRemote(type: UsuarioData): UsuarioRemote {
         return UsuarioRemote(
             email = type.email,
-            senha = type.email
+            senha = type.senha
         )
     }
 }

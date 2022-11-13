@@ -3,12 +3,12 @@ package com.gabriel.remote.beer.dataSource
 import android.util.Log
 import com.gabriel.data.beer.dataSource.GetSingleBeerDataSource
 import com.gabriel.data.beer.model.BeerData
-import com.gabriel.domain.util.resource.ResourceState
 import com.gabriel.remote.beer.mapper.BeerRemoteMapper
 import com.gabriel.remote.beer.model.BeerRemote
 import com.gabriel.remote.beer.service.GetSingleBeerService
-import com.gabriel.domain.util.constants.ConstantsUtil.MSG_GET_SINGLE_BEERS_DS
-import com.gabriel.domain.util.constants.ConstantsUtil.TAG_GET_SINGLE_BEERS_DS
+import com.gabriel.strategy.constants.ConstantsUtil.MSG_GET_SINGLE_BEERS_DS
+import com.gabriel.strategy.constants.ConstantsUtil.TAG_GET_SINGLE_BEERS_DS
+import com.gabriel.strategy.resource.ResourceState
 import retrofit2.Response
 import java.io.IOException
 

@@ -8,14 +8,14 @@ class UsuarioDataMapper : DataMapper<UsuarioData, Usuario> {
     override fun mapToDomain(type: UsuarioData): Usuario {
         return Usuario(
             email = type.email,
-            senha = type.email
+            senha = type.senha
         )
     }
 
     override fun mapToData(type: Usuario): UsuarioData {
         return UsuarioData(
             email = type.email,
-            senha = type.email
+            senha = type.senha
         )
     }
 }

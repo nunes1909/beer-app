@@ -7,4 +7,10 @@
     <string name="teor_alcoolico">Teor alcoólico:</string>
     <string name="dicas_comidas">Dicas de Comidas:</string>
     <string name="dicas_cervejeiros">Dicas de Cervejeiros:</string>
+    <string name="digite_email">Digite aqui o seu e-mail</string>
+    <string name="digite_senha">Digite aqui a sua senha</string>
+    <string name="confirma_senha">Confirme a sua senha</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="logar">Logar</string>
+    <string name="imagem_login">Imagem Login</string>
 </resources>
