@@ -16,4 +16,6 @@
     <string name="home">Home</string>
     <string name="favoritos">Favoritos</string>
     <string name="conta">Conta</string>
+    <string name="semelhantes">Semelhantes:</string>
+    <string name="favoritar">Favoritar:</string>
 </resources>

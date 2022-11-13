@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.gabriel.remote'
+    namespace 'com.gabriel.cache'
     compileSdk 32
 
     defaultConfig {
@@ -31,8 +31,6 @@ android {
 }
 
 dependencies {
-    implementation project(path: ':data')
-    implementation project(path: ':strategy')
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
@@ -40,17 +38,4 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-
-    def koin_version= "3.2.2"
-    implementation "io.insert-koin:koin-core:$koin_version"
-    implementation "io.insert-koin:koin-android:$koin_version"
-
-    def retrofit_version = "2.9.0"
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
-
-    implementation platform('com.google.firebase:firebase-bom:31.0.2')
-    implementation 'com.google.firebase:firebase-auth-ktx'
-    implementation 'com.google.firebase:firebase-firestore-ktx'
 }

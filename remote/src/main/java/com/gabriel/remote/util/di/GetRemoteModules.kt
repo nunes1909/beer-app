@@ -2,10 +2,12 @@ package com.gabriel.remote.util.di
 
 import com.gabriel.data.beer.dataSource.GetAllBeersDataSource
 import com.gabriel.data.beer.dataSource.GetSingleBeerDataSource
+import com.gabriel.data.beer.dataSource.SaveBeerRemoteDataSource
 import com.gabriel.data.usuario.dataSource.AutenticaUsuarioDataSource
 import com.gabriel.data.usuario.dataSource.CadastraUsuarioDataSource
 import com.gabriel.remote.beer.dataSource.GetAllBeersDataSourceImpl
 import com.gabriel.remote.beer.dataSource.GetSingleBeerDataSourceImpl
+import com.gabriel.remote.beer.dataSource.SaveBeerRemoteDataSourceImpl
 import com.gabriel.remote.beer.mapper.BeerRemoteMapper
 import com.gabriel.remote.beer.service.GetAllBeersService
 import com.gabriel.remote.beer.service.GetSingleBeerService
@@ -16,14 +18,16 @@ import com.gabriel.remote.usuario.mapper.UsuarioRemoteMapper
 import com.gabriel.remote.usuario.validate.ValidaUsuarioFirebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import org.koin.dsl.module
 import retrofit2.Retrofit
 
 fun getRemoteModules() = module {
     // region firebase
-
     single<FirebaseAuth> { Firebase.auth }
+    single<FirebaseFirestore> { Firebase.firestore }
     // endregion
 
     // region retrofit
@@ -69,6 +73,13 @@ fun getRemoteModules() = module {
         AutenticaUsuarioDataSourceImpl(
             firebaseAuth = get(),
             validaUser = ValidaUsuarioFirebase()
+        )
+    }
+    factory<SaveBeerRemoteDataSource> {
+        SaveBeerRemoteDataSourceImpl(
+            firestore = get(),
+            firebaseAuth = get(),
+            mapper = get()
         )
     }
     // endregion

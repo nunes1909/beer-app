@@ -6,6 +6,7 @@ import com.gabriel.beerapp.beer.mapper.BeerViewMapper
 import com.gabriel.beerapp.beer.model.BeerView
 import com.gabriel.domain.beer.model.Beer
 import com.gabriel.domain.beer.useCase.GetAllBeersUseCase
+import com.gabriel.domain.beer.useCase.SaveBeerUseCase
 import com.gabriel.strategy.resource.ResourceState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -13,7 +14,8 @@ import kotlinx.coroutines.launch
 
 class DetalhesViewModel(
     private val mapper: BeerViewMapper,
-    private val getAllBeersUseCase: GetAllBeersUseCase
+    private val getAllBeersUseCase: GetAllBeersUseCase,
+    private val saveBeerUseCase: SaveBeerUseCase
 ) : ViewModel() {
 
     private val _list = MutableStateFlow<ResourceState<List<BeerView>>>(ResourceState.Loading())
@@ -37,5 +39,10 @@ class DetalhesViewModel(
             return ResourceState.Success(listView)
         }
         return ResourceState.Error(cod = resource.cod, message = resource.message)
+    }
+
+    fun save(beerView: BeerView) = viewModelScope.launch {
+        val beer = mapper.mapToDomain(beerView)
+        saveBeerUseCase.saveBeer(beer)
     }
 }

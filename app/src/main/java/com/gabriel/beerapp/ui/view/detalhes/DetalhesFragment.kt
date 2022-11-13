@@ -29,6 +29,7 @@ class DetalhesFragment : BaseFragmentIn<FragmentDetalhesBinding, DetalhesViewMod
         super.onViewCreated(view, savedInstanceState)
         configuraRecycler()
         preencheCampos()
+        configuraSave()
         buscaSemelhantes()
         observerSemelhantes()
         configuraClickAdapter()
@@ -57,6 +58,14 @@ class DetalhesFragment : BaseFragmentIn<FragmentDetalhesBinding, DetalhesViewMod
             val posicao = rand(0, size - 1)
             foodPairing[posicao]
         } ?: ""
+
+    private fun configuraSave() {
+        binding.swFavoritar.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                viewModel.save(args.beerView)
+            }
+        }
+    }
 
     private fun buscaSemelhantes() {
         viewModel.getAll(args.beerView.name)

@@ -25,7 +25,8 @@ fun getViewModules() = module {
     viewModel {
         DetalhesViewModel(
             mapper = get(),
-            getAllBeersUseCase = get()
+            getAllBeersUseCase = get(),
+            saveBeerUseCase = get()
         )
     }
     viewModel {
