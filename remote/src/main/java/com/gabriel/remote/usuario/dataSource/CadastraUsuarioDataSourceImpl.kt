@@ -14,15 +14,6 @@ class CadastraUsuarioDataSourceImpl(
         return try {
             val task = firebaseAuth
                 .createUserWithEmailAndPassword(usuario.email!!, usuario.senha!!)
-
-            task.addOnSuccessListener {
-
-            }
-
-            task.addOnFailureListener {
-
-            }
-
             validaUser.validaTask(task = task, auth = false).also { firebaseAuth.signOut() }
         } catch (e: IllegalAccessException) {
             ResourceState.Default(data = false, message = "E-mail ou senha inválido.")

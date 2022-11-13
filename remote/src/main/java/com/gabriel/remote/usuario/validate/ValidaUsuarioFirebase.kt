@@ -21,12 +21,12 @@ class ValidaUsuarioFirebase {
         is FirebaseAuthWeakPasswordException -> "A senha precisa ter pelo menos 6 dígitos."
         is FirebaseAuthInvalidCredentialsException -> "E-mail ou senha inválido."
         is FirebaseAuthUserCollisionException -> "E-mail já cadastrado."
-        else -> "Erro desconhecido."
+        else -> "Erro desconhecido -> ${exception?.message}"
     }
 
     private fun catchErrorAuth(exception: Exception?): String = when (exception) {
         is FirebaseAuthInvalidUserException,
         is FirebaseAuthInvalidCredentialsException -> "E-mail ou senha incorretos"
-        else -> "Erro desconhecido"
+        else -> "Erro desconhecido -> ${exception?.message}"
     }
 }

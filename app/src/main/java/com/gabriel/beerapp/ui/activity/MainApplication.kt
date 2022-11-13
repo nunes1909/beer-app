@@ -1,4 +1,4 @@
-package com.gabriel.beerapp.ui.view.activity
+package com.gabriel.beerapp.ui.activity
 
 import android.app.Application
 import com.gabriel.beerapp.util.di.GetBeerModules

@@ -1,7 +1,7 @@
 package com.gabriel.strategy.resource
 
 sealed class ResourceState<T>(
-    val data: T? = null,
+    var data: T? = null,
     val cod: Int? = null,
     val message: String? = null
 ) {
@@ -13,7 +13,7 @@ sealed class ResourceState<T>(
     class Default<T>(data: T? = null, message: String? = null) :
         ResourceState<T>(data = data, message = message)
 
-    class Loading<T> : ResourceState<T>()
+    class Loading<T>() : ResourceState<T>()
 
     class Empty<T> : ResourceState<T>()
 }
