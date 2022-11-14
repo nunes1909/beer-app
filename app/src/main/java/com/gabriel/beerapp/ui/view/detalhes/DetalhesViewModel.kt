@@ -25,6 +25,9 @@ class DetalhesViewModel(
     private val _list = MutableStateFlow<ResourceState<List<BeerView>>>(ResourceState.Loading())
     val list: StateFlow<ResourceState<List<BeerView>>> = _list
 
+    private val _exists = MutableStateFlow<Boolean>(false)
+    val exists: StateFlow<Boolean> = _exists
+
     fun getAll(query: String? = null) = viewModelScope.launch {
         val primeiroNome = resolvePrimeiroNome(query)
         val resourceDomain = getAllBeersUseCase.getAll(primeiroNome)
@@ -53,9 +56,6 @@ class DetalhesViewModel(
     fun delete(beerView: BeerView) = viewModelScope.launch {
         deleteBeerUseCase.deleteBeer(beerView.id!!)
     }
-
-    private val _exists = MutableStateFlow<Boolean>(false)
-    val exists: StateFlow<Boolean> = _exists
 
     fun verifyIfExists(beerId: Int) = viewModelScope.launch {
         _exists.value = verifyIfExistsUseCase.verifyIfExists(beerId)

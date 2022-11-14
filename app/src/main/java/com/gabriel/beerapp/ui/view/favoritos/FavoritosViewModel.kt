@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.gabriel.beerapp.beer.mapper.BeerViewMapper
 import com.gabriel.beerapp.beer.model.BeerView
 import com.gabriel.domain.beer.model.Beer
+import com.gabriel.domain.beer.useCase.DeleteBeerUseCase
 import com.gabriel.domain.beer.useCase.GetBeersFavUseCase
 import com.gabriel.strategy.resource.ResourceState
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -14,6 +15,7 @@ import kotlinx.coroutines.launch
 class FavoritosViewModel(
     private val mapper: BeerViewMapper,
     private val getBeersFavUseCase: GetBeersFavUseCase,
+    private val deleteBeerUseCase: DeleteBeerUseCase
 ) : ViewModel() {
 
     init {
@@ -24,7 +26,7 @@ class FavoritosViewModel(
         MutableStateFlow<ResourceState<List<BeerView>>>(ResourceState.Loading())
     val favoritos: StateFlow<ResourceState<List<BeerView>>> = _favoritos
 
-    private fun getFavoritos() = viewModelScope.launch {
+    fun getFavoritos() = viewModelScope.launch {
         val resourceDomain = getBeersFavUseCase.getBeersFav()
         _favoritos.value = validateResource(resourceDomain)
     }
@@ -36,5 +38,9 @@ class FavoritosViewModel(
             return ResourceState.Success(listView)
         }
         return ResourceState.Error(cod = resource.cod, message = resource.message)
+    }
+
+    fun delete(beerView: BeerView) = viewModelScope.launch {
+        deleteBeerUseCase.deleteBeer(beerView.id!!)
     }
 }

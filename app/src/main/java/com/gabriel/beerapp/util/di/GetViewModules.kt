@@ -48,6 +48,7 @@ fun getViewModules() = module {
         FavoritosViewModel(
             mapper = get(),
             getBeersFavUseCase = get(),
+            deleteBeerUseCase = get()
         )
     }
     // endregion

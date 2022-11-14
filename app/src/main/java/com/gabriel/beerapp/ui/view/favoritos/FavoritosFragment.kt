@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.gabriel.beerapp.databinding.FragmentFavoritosBinding
 import com.gabriel.beerapp.ui.view.favoritos.adapter.FavoritosAdapter
 import com.gabriel.beerapp.util.base.BaseFragmentIn
@@ -31,6 +33,28 @@ class FavoritosFragment : BaseFragmentIn<FragmentFavoritosBinding, FavoritosView
     private fun configuraRecycler() = with(binding) {
         rvFavoritos.adapter = adapter
         rvFavoritos.layoutManager = LinearLayoutManager(requireContext())
+        ItemTouchHelper(configuraTouchHelper()).attachToRecyclerView(rvFavoritos)
+    }
+
+    private fun configuraTouchHelper(): ItemTouchHelper.SimpleCallback {
+        return object : ItemTouchHelper.SimpleCallback(
+            0,
+            ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
+        ) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ) = false
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val beerView = adapter.beers[viewHolder.adapterPosition]
+                viewModel.delete(beerView).also {
+                    toast("${beerView.name} removido.")
+                    viewModel.getFavoritos()
+                }
+            }
+        }
     }
 
     private fun observerFavoritos() = lifecycleScope.launch {
