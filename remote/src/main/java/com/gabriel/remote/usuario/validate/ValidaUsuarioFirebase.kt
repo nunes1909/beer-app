@@ -7,7 +7,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class ValidaUsuarioFirebase {
     fun validaTask(task: Task<AuthResult>, auth: Boolean): ResourceState<Boolean> {

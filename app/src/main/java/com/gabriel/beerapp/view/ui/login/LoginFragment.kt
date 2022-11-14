@@ -43,7 +43,9 @@ class LoginFragment : BaseFragmentOut<FragmentLoginBinding, LoginViewModel>() {
         val email = etLoginEmail.text?.trim().toString()
         val senha = etLoginSenha.text?.trim().toString()
 
-        when (val resource = ValidaLogin().validaCamposFormulario(email = email, senha = senha)) {
+        val resource = ValidaLogin().validaCamposFormulario(email = email, senha = senha)
+
+        when (resource) {
             is ResourceState.Success -> {
                 viewModel.autenticaUsuario(UsuarioView(email = email, senha = senha))
             }

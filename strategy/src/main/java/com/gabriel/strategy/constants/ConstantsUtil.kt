@@ -31,6 +31,9 @@ object ConstantsUtil {
     const val TAG_VERIFY_EXISTS_DS = "VerifyIfExists"
     const val MSG_VERIFY_EXISTS_DS = "VerifyIfExistsDataSourceImpl/verifyIfExists: "
 
+    const val TAG_AUTH_USER_DS = "AutenticaUsuario"
+    const val MSG_AUTH_USER_DS = "AutenticaUsuarioDataSourceImpl/autenticaUsuario: "
+
     const val TAG_BEERS_FRAGMENT = "BeersFragment"
     const val TAG_DETALHES_FRAGMENT = "DetalhesFragment"
     // endregion

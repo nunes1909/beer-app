@@ -5,7 +5,6 @@ import com.gabriel.data.usuario.model.UsuarioData
 import com.gabriel.remote.usuario.validate.ValidaUsuarioFirebase
 import com.gabriel.strategy.resource.ResourceState
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.userProfileChangeRequest
 import kotlin.coroutines.suspendCoroutine
 
 class CadastraUsuarioDataSourceImpl(
