@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import com.gabriel.beerapp.databinding.FragmentBeersBinding
-import com.gabriel.beerapp.ui.adapters.BeersAdapter
+import com.gabriel.beerapp.ui.view.beers.adapter.BeersAdapter
 import com.gabriel.beerapp.util.base.BaseFragmentIn
 import com.gabriel.beerapp.util.extensions.toast
 import com.gabriel.strategy.constants.ConstantsUtil.TAG_BEERS_FRAGMENT

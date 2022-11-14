@@ -16,18 +16,11 @@ import kotlinx.coroutines.launch
 class DetalhesViewModel(
     private val mapper: BeerViewMapper,
     private val getAllBeersUseCase: GetAllBeersUseCase,
-    private val getBeersByIdUseCase: GetBeersByIdUseCase,
     private val saveBeerUseCase: SaveBeerUseCase
 ) : ViewModel() {
 
     private val _list = MutableStateFlow<ResourceState<List<BeerView>>>(ResourceState.Loading())
     val list: StateFlow<ResourceState<List<BeerView>>> = _list
-
-    init {
-        viewModelScope.launch {
-            getBeersByIdUseCase.getBeersById()
-        }
-    }
 
     fun getAll(query: String? = null) = viewModelScope.launch {
         val primeiroNome = resolvePrimeiroNome(query)

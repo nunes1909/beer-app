@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
+    android:layout_height="150dp"
     android:layout_margin="12dp"
     app:cardCornerRadius="10dp"
     app:cardElevation="10dp">
@@ -13,45 +13,44 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/ivBannerItemBeer"
-            android:layout_width="0dp"
-            android:layout_height="170dp"
+            android:id="@+id/ivBannerItemFav"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
             android:background="#c1c1c1"
             android:contentDescription="@string/imagem_item_beers"
             android:scaleType="fitCenter"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
         <TextView
-            android:id="@+id/tvTitleItemBeer"
+            android:id="@+id/tvTitleItemFav"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:textAlignment="center"
-            app:layout_constraintVertical_bias="0.2"
             android:textColor="#FF9800"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/tvDescriptionItemBeer"
+            app:layout_constraintBottom_toTopOf="@id/tvDescriptionItemFav"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivBannerItemBeer"
+            app:layout_constraintStart_toEndOf="@+id/ivBannerItemFav"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed"
             tools:text="Polar" />
 
         <TextView
-            android:id="@+id/tvDescriptionItemBeer"
+            android:id="@+id/tvDescriptionItemFav"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:textAlignment="center"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/tvTitleItemBeer"
-            app:layout_constraintStart_toStartOf="@id/tvTitleItemBeer"
-            app:layout_constraintTop_toBottomOf="@id/tvTitleItemBeer"
-            tools:text="O puro malte gaúchasdasdasdasdasdasdaso" />
+            app:layout_constraintEnd_toEndOf="@id/tvTitleItemFav"
+            app:layout_constraintStart_toStartOf="@id/tvTitleItemFav"
+            app:layout_constraintTop_toBottomOf="@id/tvTitleItemFav"
+            tools:text="O puro malte" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

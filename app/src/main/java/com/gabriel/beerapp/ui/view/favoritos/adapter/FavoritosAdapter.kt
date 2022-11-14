@@ -1,19 +1,19 @@
-package com.gabriel.beerapp.ui.adapters
+package com.gabriel.beerapp.ui.view.favoritos.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
 import com.gabriel.beerapp.beer.model.BeerView
 import com.gabriel.beerapp.databinding.ItemBeersBinding
+import com.gabriel.beerapp.databinding.ItemFavBinding
 import com.gabriel.beerapp.util.extensions.limitValue
 import com.gabriel.beerapp.util.extensions.tentaCarregar
 
-class BeersAdapter : RecyclerView.Adapter<BeersAdapter.BeerViewHolder>() {
+class FavoritosAdapter : RecyclerView.Adapter<FavoritosAdapter.BeerViewHolder>() {
 
-    inner class BeerViewHolder(val binding: ItemBeersBinding) :
+    inner class BeerViewHolder(val binding: ItemFavBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     private val differConfig = object : DiffUtil.ItemCallback<BeerView>() {
@@ -43,16 +43,16 @@ class BeersAdapter : RecyclerView.Adapter<BeersAdapter.BeerViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BeerViewHolder {
         return BeerViewHolder(
-            ItemBeersBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemFavBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
     }
 
     override fun onBindViewHolder(holder: BeerViewHolder, position: Int) {
         val beer = beers[position]
         holder.binding.apply {
-            ivBannerItemBeer.tentaCarregar(beer.imageUrl)
-            tvTitleItemBeer.text = beer.name?.limitValue(20, true)
-            tvDescriptionItemBeer.text = beer.tagline?.limitValue(40, true)
+            ivBannerItemFav.tentaCarregar(beer.imageUrl)
+            tvTitleItemFav.text = beer.name?.limitValue(20, true)
+            tvDescriptionItemFav.text = beer.tagline?.limitValue(40, true)
         }
 
         holder.itemView.setOnClickListener {
