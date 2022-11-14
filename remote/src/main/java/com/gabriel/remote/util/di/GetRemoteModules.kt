@@ -1,12 +1,12 @@
 package com.gabriel.remote.util.di
 
 import com.gabriel.data.beer.dataSource.GetAllBeersDataSource
-import com.gabriel.data.beer.dataSource.GetBeersByIdDataSource
+import com.gabriel.data.beer.dataSource.GetBeersFavDataSource
 import com.gabriel.data.beer.dataSource.SaveBeerRemoteDataSource
 import com.gabriel.data.usuario.dataSource.AutenticaUsuarioDataSource
 import com.gabriel.data.usuario.dataSource.CadastraUsuarioDataSource
 import com.gabriel.remote.beer.dataSource.GetAllBeersDataSourceImpl
-import com.gabriel.remote.beer.dataSource.GetBeersByIdDataSourceImpl
+import com.gabriel.remote.beer.dataSource.GetBeersFavDataSourceImpl
 import com.gabriel.remote.beer.dataSource.SaveBeerRemoteDataSourceImpl
 import com.gabriel.remote.beer.mapper.BeerRemoteMapper
 import com.gabriel.remote.beer.service.GetAllBeersService
@@ -57,8 +57,8 @@ fun getRemoteModules() = module {
             mapper = get()
         )
     }
-    factory<GetBeersByIdDataSource> {
-        GetBeersByIdDataSourceImpl(
+    factory<GetBeersFavDataSource> {
+        GetBeersFavDataSourceImpl(
             firestore = get(),
             firebaseAuth = get(),
             mapper = get()

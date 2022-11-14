@@ -32,8 +32,8 @@ fun getDataModules() = module {
     factory<GetAllBeersDataStore> {
         GetAllBeersDataStoreImpl(dataSource = get())
     }
-    factory<GetBeersByIdDataStore> {
-        GetBeersByIdDataStoreImpl(dataSource = get())
+    factory<GetBeersFavDataStore> {
+        GetBeersFavDataStoreImpl(dataSource = get())
     }
     factory<SaveBeerDataStore> {
         SaveBeerDataStoreImpl(dataSource = get())
@@ -65,8 +65,8 @@ fun getDataModules() = module {
             mapper = get()
         )
     }
-    factory<GetBeersByIdRepository> {
-        GetBeersByIdRepositoryImpl(
+    factory<GetBeersFavRepository> {
+        GetBeersFavRepositoryImpl(
             dataStore = get(),
             mapper = get()
         )

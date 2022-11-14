@@ -6,7 +6,6 @@ import com.gabriel.beerapp.beer.mapper.BeerViewMapper
 import com.gabriel.beerapp.beer.model.BeerView
 import com.gabriel.domain.beer.model.Beer
 import com.gabriel.domain.beer.useCase.GetAllBeersUseCase
-import com.gabriel.domain.beer.useCase.GetBeersByIdUseCase
 import com.gabriel.domain.beer.useCase.SaveBeerUseCase
 import com.gabriel.strategy.resource.ResourceState
 import kotlinx.coroutines.flow.MutableStateFlow
