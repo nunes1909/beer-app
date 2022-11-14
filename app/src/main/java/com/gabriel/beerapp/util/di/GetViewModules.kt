@@ -1,12 +1,13 @@
 package com.gabriel.beerapp.util.di
 
 import com.gabriel.beerapp.beer.mapper.BeerViewMapper
-import com.gabriel.beerapp.ui.view.beers.BeersViewModel
-import com.gabriel.beerapp.ui.view.cadastro.CadastroViewModel
-import com.gabriel.beerapp.ui.view.detalhes.DetalhesViewModel
-import com.gabriel.beerapp.ui.view.favoritos.FavoritosViewModel
-import com.gabriel.beerapp.ui.view.login.LoginViewModel
+import com.gabriel.beerapp.view.ui.beers.BeersViewModel
+import com.gabriel.beerapp.view.ui.cadastro.CadastroViewModel
+import com.gabriel.beerapp.view.ui.detalhes.DetalhesViewModel
+import com.gabriel.beerapp.view.ui.favoritos.FavoritosViewModel
+import com.gabriel.beerapp.view.ui.login.LoginViewModel
 import com.gabriel.beerapp.usuario.mapper.UsuarioViewMapper
+import com.gabriel.beerapp.view.ui.conta.ContaViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -42,6 +43,12 @@ fun getViewModules() = module {
         LoginViewModel(
             mapper = get(),
             autenticaUsuarioUseCase = get()
+        )
+    }
+    viewModel {
+        ContaViewModel(
+            mapper = get(),
+            updateProfileUseCase = get()
         )
     }
     viewModel {

@@ -18,4 +18,8 @@
     <string name="conta">Conta</string>
     <string name="semelhantes">Semelhantes:</string>
     <string name="favoritar">Favoritar:</string>
+    <string name="completar_cadastro">Completar cadastro</string>
+    <string name="editar_cadastro">Editar cadastro</string>
+    <string name="sair">Sair</string>
+    <string name="salvar">Salvar</string>
 </resources>

@@ -7,6 +7,7 @@ import com.gabriel.domain.usuario.model.Usuario
 class UsuarioViewMapper : ViewMapper<UsuarioView, Usuario> {
     override fun mapToDomain(type: UsuarioView): Usuario {
         return Usuario(
+            nome = type.nome,
             email = type.email,
             senha = type.senha
         )
@@ -14,6 +15,7 @@ class UsuarioViewMapper : ViewMapper<UsuarioView, Usuario> {
 
     override fun mapToView(type: Usuario): UsuarioView {
         return UsuarioView(
+            nome = type.nome,
             email = type.email,
             senha = type.senha
         )

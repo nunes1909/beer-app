@@ -7,6 +7,7 @@ import com.gabriel.remote.util.base.RemoteMapper
 class UsuarioRemoteMapper : RemoteMapper<UsuarioRemote, UsuarioData> {
     override fun mapToData(type: UsuarioRemote): UsuarioData {
         return UsuarioData(
+            nome = type.nome,
             email = type.email,
             senha = type.senha
         )
@@ -14,6 +15,7 @@ class UsuarioRemoteMapper : RemoteMapper<UsuarioRemote, UsuarioData> {
 
     override fun mapToRemote(type: UsuarioData): UsuarioRemote {
         return UsuarioRemote(
+            nome = type.nome,
             email = type.email,
             senha = type.senha
         )
