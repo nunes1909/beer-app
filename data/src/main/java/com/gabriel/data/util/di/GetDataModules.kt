@@ -38,8 +38,8 @@ fun getDataModules() = module {
     factory<SaveBeerDataStore> {
         SaveBeerDataStoreImpl(dataSource = get())
     }
-    factory<GetStoredBeersDataStore> {
-        GetStoredBeersDataStoreImpl(dataSource = get())
+    factory<VerifyIfExistsDataStore> {
+        VerifyIfExistsDataStoreImpl(dataSource = get())
     }
     factory<DeleteBeerDataStore> {
         DeleteBeerDataStoreImpl(dataSource = get())
@@ -77,16 +77,14 @@ fun getDataModules() = module {
             mapper = get()
         )
     }
-    factory<GetStoredBeersRepository> {
-        GetStoredBeersRepositoryImpl(
-            dataStore = get(),
-            mapper = get()
+    factory<VerifyIfExistsRepository> {
+        VerifyIfExistsRepositoryImpl(
+            dataStore = get()
         )
     }
     factory<DeleteBeerRepository> {
         DeleteBeerRepositoryImpl(
-            dataStore = get(),
-            mapper = get()
+            dataStore = get()
         )
     }
     // enregion

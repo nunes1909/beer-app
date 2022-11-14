@@ -16,6 +16,8 @@ import com.gabriel.beerapp.util.extensions.rand
 import com.gabriel.beerapp.util.extensions.toast
 import com.gabriel.strategy.constants.ConstantsUtil.TAG_DETALHES_FRAGMENT
 import com.gabriel.strategy.resource.ResourceState
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -27,12 +29,14 @@ class DetalhesFragment : BaseFragmentIn<FragmentDetalhesBinding, DetalhesViewMod
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.verifyIfExists(args.beerView.id!!)
         configuraRecycler()
         preencheCampos()
         configuraSave()
         buscaSemelhantes()
         observerSemelhantes()
         configuraClickAdapter()
+        observerSwitch()
     }
 
     private fun configuraRecycler() = with(binding) {
@@ -40,16 +44,18 @@ class DetalhesFragment : BaseFragmentIn<FragmentDetalhesBinding, DetalhesViewMod
         rvDetalhesSemelhantes.layoutManager = GridLayoutManager(requireContext(), 2)
     }
 
-    private fun preencheCampos() = with(binding) {
-        args.beerView.let { beerView ->
-            ivDetalhes.load(beerView.imageUrl)
-            tvTitleDetalhes.text = beerView.name
-            tvTaglineDetalhes.text = beerView.tagline
-            tvDescriptionDetalhes.text = beerView.description
-            tvTeor.text = "${beerView.abv.toString()} %"
-            tvFabricado.text = beerView.firstBrewed
-            tvDicasComidas.text = resolveFraseAtual(beerView.foodPairing)
-            tvDicasCervejeiros.text = beerView.brewersTips
+    private fun preencheCampos() = lifecycleScope.launch {
+        with(binding) {
+            args.beerView.let { beerView ->
+                ivDetalhes.load(beerView.imageUrl)
+                tvTitleDetalhes.text = beerView.name
+                tvTaglineDetalhes.text = beerView.tagline
+                tvDescriptionDetalhes.text = beerView.description
+                tvTeor.text = "${beerView.abv.toString()} %"
+                tvFabricado.text = beerView.firstBrewed
+                tvDicasComidas.text = resolveFraseAtual(beerView.foodPairing)
+                tvDicasCervejeiros.text = beerView.brewersTips
+            }
         }
     }
 
@@ -94,6 +100,10 @@ class DetalhesFragment : BaseFragmentIn<FragmentDetalhesBinding, DetalhesViewMod
             val action = DetalhesFragmentDirections.acaoSemelhantesParaDetalhes(beerView)
             controller.navigate(action)
         }
+    }
+
+    private fun observerSwitch() = lifecycleScope.launch {
+        viewModel.exists.collect { binding.swFavoritar.isChecked = it }
     }
 
     override fun getViewBinding(

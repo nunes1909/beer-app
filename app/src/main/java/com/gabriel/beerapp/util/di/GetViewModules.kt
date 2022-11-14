@@ -27,6 +27,7 @@ fun getViewModules() = module {
         DetalhesViewModel(
             mapper = get(),
             getAllBeersUseCase = get(),
+            verifyIfExistsUseCase = get(),
             saveBeerUseCase = get()
         )
     }
@@ -45,7 +46,7 @@ fun getViewModules() = module {
     viewModel {
         FavoritosViewModel(
             mapper = get(),
-            getBeersByIdUseCase = get(),
+            getBeersFavUseCase = get(),
         )
     }
     // endregion

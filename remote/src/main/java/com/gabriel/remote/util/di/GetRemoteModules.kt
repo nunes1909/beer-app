@@ -3,11 +3,13 @@ package com.gabriel.remote.util.di
 import com.gabriel.data.beer.dataSource.GetAllBeersDataSource
 import com.gabriel.data.beer.dataSource.GetBeersFavDataSource
 import com.gabriel.data.beer.dataSource.SaveBeerRemoteDataSource
+import com.gabriel.data.beer.dataSource.VerifyIfExistsDataSource
 import com.gabriel.data.usuario.dataSource.AutenticaUsuarioDataSource
 import com.gabriel.data.usuario.dataSource.CadastraUsuarioDataSource
 import com.gabriel.remote.beer.dataSource.GetAllBeersDataSourceImpl
 import com.gabriel.remote.beer.dataSource.GetBeersFavDataSourceImpl
 import com.gabriel.remote.beer.dataSource.SaveBeerRemoteDataSourceImpl
+import com.gabriel.remote.beer.dataSource.VerifyIfExistsDataSourceImpl
 import com.gabriel.remote.beer.mapper.BeerRemoteMapper
 import com.gabriel.remote.beer.service.GetAllBeersService
 import com.gabriel.remote.beer.service.GetBeersByIdService
@@ -81,6 +83,12 @@ fun getRemoteModules() = module {
             firestore = get(),
             firebaseAuth = get(),
             mapper = get()
+        )
+    }
+    factory<VerifyIfExistsDataSource> {
+        VerifyIfExistsDataSourceImpl(
+            firestore = get(),
+            firebaseAuth = get()
         )
     }
     // endregion

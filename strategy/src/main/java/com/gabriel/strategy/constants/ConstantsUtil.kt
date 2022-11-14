@@ -16,6 +16,6 @@ object ConstantsUtil {
     const val KEY_BOTTOM_NAV = "exibeBottomNav"
 
     const val COLECAO_FAVORITOS = "favoritos"
-
     const val USUARIO_ID = "usuarioId"
+    const val BEER_ID = "id"
 }
