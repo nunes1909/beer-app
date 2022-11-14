@@ -69,6 +69,8 @@ class DetalhesFragment : BaseFragmentIn<FragmentDetalhesBinding, DetalhesViewMod
         binding.swFavoritar.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 viewModel.save(args.beerView)
+            } else {
+                viewModel.delete(args.beerView)
             }
         }
     }

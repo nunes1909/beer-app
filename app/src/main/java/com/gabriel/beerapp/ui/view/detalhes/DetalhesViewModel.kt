@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.gabriel.beerapp.beer.mapper.BeerViewMapper
 import com.gabriel.beerapp.beer.model.BeerView
 import com.gabriel.domain.beer.model.Beer
+import com.gabriel.domain.beer.useCase.DeleteBeerUseCase
 import com.gabriel.domain.beer.useCase.GetAllBeersUseCase
 import com.gabriel.domain.beer.useCase.SaveBeerUseCase
 import com.gabriel.domain.beer.useCase.VerifyIfExistsUseCase
@@ -17,7 +18,8 @@ class DetalhesViewModel(
     private val mapper: BeerViewMapper,
     private val getAllBeersUseCase: GetAllBeersUseCase,
     private val verifyIfExistsUseCase: VerifyIfExistsUseCase,
-    private val saveBeerUseCase: SaveBeerUseCase
+    private val saveBeerUseCase: SaveBeerUseCase,
+    private val deleteBeerUseCase: DeleteBeerUseCase
 ) : ViewModel() {
 
     private val _list = MutableStateFlow<ResourceState<List<BeerView>>>(ResourceState.Loading())
@@ -46,6 +48,10 @@ class DetalhesViewModel(
     fun save(beerView: BeerView) = viewModelScope.launch {
         val beer = mapper.mapToDomain(beerView)
         saveBeerUseCase.saveBeer(beer)
+    }
+
+    fun delete(beerView: BeerView) = viewModelScope.launch {
+        deleteBeerUseCase.deleteBeer(beerView.id!!)
     }
 
     private val _exists = MutableStateFlow<Boolean>(false)
