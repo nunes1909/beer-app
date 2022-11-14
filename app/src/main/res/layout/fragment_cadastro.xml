@@ -20,6 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:textColorHint="@color/defaultColorHint"
                 app:layout_constraintBottom_toTopOf="@+id/containerEtSenha"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -33,6 +34,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/digite_email"
                     android:inputType="textEmailAddress"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
                     tools:text="teste@teste.com" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -43,6 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:textColorHint="@color/defaultColorHint"
                 app:layout_constraintBottom_toTopOf="@+id/containerEtConfirmaSenha"
                 app:layout_constraintEnd_toEndOf="@+id/containerEtEmail"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -55,6 +58,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/digite_senha"
                     android:inputType="number"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
                     tools:text="123456" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -65,6 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:textColorHint="@color/defaultColorHint"
                 app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
                 app:layout_constraintEnd_toEndOf="@+id/containerEtSenha"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -77,6 +82,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/confirma_senha"
                     android:inputType="number"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
                     tools:text="123456" />
             </com.google.android.material.textfield.TextInputLayout>

@@ -10,13 +10,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorOnSecondary">
 
         <ImageView
             android:id="@+id/ivBannerItemFav"
             android:layout_width="150dp"
             android:layout_height="match_parent"
-            android:background="#c1c1c1"
+            android:background="@color/defaultImagesBackground"
             android:contentDescription="@string/imagem_item_beers"
             android:scaleType="fitCenter"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -30,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:textAlignment="center"
-            android:textColor="#FF9800"
+            android:textColor="@color/defaultColorTitle"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/tvDescriptionItemFav"
             app:layout_constraintEnd_toEndOf="parent"
@@ -45,6 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:textAlignment="center"
+            android:textColor="@color/defaultColorHint"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/tvTitleItemFav"

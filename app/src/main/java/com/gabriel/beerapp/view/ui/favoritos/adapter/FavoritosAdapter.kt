@@ -50,8 +50,8 @@ class FavoritosAdapter : RecyclerView.Adapter<FavoritosAdapter.BeerViewHolder>()
         val beer = beers[position]
         holder.binding.apply {
             ivBannerItemFav.tentaCarregar(beer.imageUrl)
-            tvTitleItemFav.text = beer.name?.limitValue(20, true)
-            tvDescriptionItemFav.text = beer.tagline?.limitValue(40, true)
+            tvTitleItemFav.text = beer.name?.limitValue(50, true)
+            tvDescriptionItemFav.text = beer.tagline?.limitValue(80, true)
         }
 
         holder.itemView.setOnClickListener {
