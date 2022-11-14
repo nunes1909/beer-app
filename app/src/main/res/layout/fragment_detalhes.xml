@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/containerInfos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorOnSecondary">
+
+                <ImageView
+                    android:id="@+id/ivDetalhes"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:background="@color/defaultImagesBackground"
+                    android:contentDescription="@string/imagem_detalhes"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+                <TextView
+                    android:id="@+id/tvTitleDetalhes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12sp"
+                    android:textColor="@color/defaultColorTitle"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/ivDetalhes"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="@id/ivDetalhes"
+                    app:layout_constraintTop_toBottomOf="@id/ivDetalhes"
+                    tools:text="Polar" />
+
+                <TextView
+                    android:id="@+id/tvTaglineDetalhes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/defaultColorHint"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/tvTitleDetalhes"
+                    app:layout_constraintStart_toStartOf="@id/tvTitleDetalhes"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleDetalhes"
+                    tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." />
+
+                <TextView
+                    android:id="@+id/tvDescriptionDetalhes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="@color/defaultColorHint"
+                    app:layout_constraintEnd_toEndOf="@id/tvTaglineDetalhes"
+                    app:layout_constraintStart_toStartOf="@id/tvTaglineDetalhes"
+                    app:layout_constraintTop_toBottomOf="@id/tvTaglineDetalhes"
+                    tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." />
+
+                <TextView
+                    android:id="@+id/tvLabelFabricado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/fabricado_em"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/tvDescriptionDetalhes"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDescriptionDetalhes" />
+
+                <TextView
+                    android:id="@+id/tvFabricado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/defaultColorHint"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvLabelFabricado"
+                    app:layout_constraintStart_toEndOf="@+id/tvLabelFabricado"
+                    app:layout_constraintTop_toTopOf="@+id/tvLabelFabricado"
+                    tools:text="12/2022" />
+
+                <TextView
+                    android:id="@+id/tvLabelTeor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/teor_alcoolico"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/tvDescriptionDetalhes"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLabelFabricado" />
+
+                <TextView
+                    android:id="@+id/tvTeor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/defaultColorHint"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvLabelTeor"
+                    app:layout_constraintStart_toEndOf="@+id/tvLabelTeor"
+                    app:layout_constraintTop_toTopOf="@+id/tvLabelTeor"
+                    tools:text="1.2" />
+
+                <TextView
+                    android:id="@+id/tvLabelDicasComidas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/dicas_comidas"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/tvLabelTeor"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLabelTeor" />
+
+                <TextView
+                    android:id="@+id/tvDicasComidas"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:textColor="@color/defaultColorHint"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvLabelDicasComidas"
+                    app:layout_constraintTop_toTopOf="@+id/tvLabelDicasComidas"
+                    tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." />
+
+                <TextView
+                    android:id="@+id/tvLabelDicasCervejeiros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/dicas_cervejeiros"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/tvLabelDicasComidas"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDicasComidas" />
+
+                <TextView
+                    android:id="@+id/tvDicasCervejeiros"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:textColor="@color/defaultColorHint"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvLabelDicasCervejeiros"
+                    app:layout_constraintTop_toTopOf="@+id/tvLabelDicasCervejeiros"
+                    tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/swFavoritar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/favoritar"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/tvLabelSemelhantes"
+                    app:layout_constraintStart_toStartOf="@+id/tvLabelDicasCervejeiros"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDicasCervejeiros" />
+
+                <TextView
+                    android:id="@+id/tvLabelSemelhantes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/semelhantes"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvLabelDicasCervejeiros"
+                    app:layout_constraintTop_toBottomOf="@+id/swFavoritar" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDetalhesSemelhantes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/containerInfos"
+            tools:listitem="@layout/item_beers" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

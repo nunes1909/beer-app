@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "734055789275",
+    "project_id": "beerapp-9c60b",
+    "storage_bucket": "beerapp-9c60b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:734055789275:android:6a301cf599b9a304e652fe",
+        "android_client_info": {
+          "package_name": "com.gabriel.beerapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "734055789275-svslih4q6un7bbtimoc9hbsu8bt7ppc2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-DDSH1TKdV5rcs6PZi2-jOBUC_uN7yhg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "734055789275-svslih4q6un7bbtimoc9hbsu8bt7ppc2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

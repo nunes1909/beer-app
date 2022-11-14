@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Beer App</string>
+    <string name="imagem_item_beers">Imagem item beers</string>
+    <string name="pesquise_cerveja">Pesquise aqui uma cerveja</string>
+    <string name="imagem_detalhes">Imagem detalhes</string>
+    <string name="fabricado_em">Fabricado em:</string>
+    <string name="teor_alcoolico">Teor alcoólico:</string>
+    <string name="dicas_comidas">Dicas de Comidas:</string>
+    <string name="dicas_cervejeiros">Dicas de Cervejeiros:</string>
+    <string name="digite_email">Digite aqui o seu e-mail</string>
+    <string name="digite_senha">Digite aqui a sua senha</string>
+    <string name="confirma_senha">Confirme a sua senha</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="logar">Logar</string>
+    <string name="imagem_login">Imagem Login</string>
+    <string name="home">Home</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="conta">Conta</string>
+    <string name="semelhantes">Semelhantes:</string>
+    <string name="favoritar">Favoritar:</string>
+    <string name="completar_cadastro">Completar cadastro</string>
+    <string name="editar_cadastro">Editar cadastro</string>
+    <string name="sair">Sair</string>
+    <string name="salvar">Salvar</string>
 </resources>

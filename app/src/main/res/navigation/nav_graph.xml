@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/beersFragment">
+    <fragment
+        android:id="@+id/beersFragment"
+        android:name="com.gabriel.beerapp.view.ui.beers.BeersFragment"
+        android:label="Beers"
+        tools:layout="@layout/fragment_beers">
+        <action
+            android:id="@+id/acaoBeersParaDetalhes"
+            app:destination="@id/detalhesFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/acaoBeersParaFavoritos"
+            app:destination="@id/favoritosFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/acaoBeersParaConta"
+            app:destination="@id/contaFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalhesFragment"
+        android:name="com.gabriel.beerapp.view.ui.detalhes.DetalhesFragment"
+        android:label="Detalhes"
+        tools:layout="@layout/fragment_detalhes">
+        <action
+            android:id="@+id/acaoSemelhantesParaDetalhes"
+            app:destination="@id/detalhesFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/detalhesFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="beerView"
+            app:argType="com.gabriel.beerapp.beer.model.BeerView" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.gabriel.beerapp.view.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/acaoLoginParaCadastro"
+            app:destination="@id/cadastroFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/acaoLoginParaBeers"
+            app:destination="@id/beersFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/cadastroFragment"
+        android:name="com.gabriel.beerapp.view.ui.cadastro.CadastroFragment"
+        android:label="CadastroFragment"
+        tools:layout="@layout/fragment_cadastro" />
+    <action
+        android:id="@+id/acaoGlobalParaLogin"
+        app:destination="@id/loginFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/favoritosFragment"
+        android:name="com.gabriel.beerapp.view.ui.favoritos.FavoritosFragment"
+        android:label="Favoritos"
+        tools:layout="@layout/fragment_favoritos">
+        <action
+            android:id="@+id/acaoFavoritosParaDetalhes"
+            app:destination="@id/detalhesFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/contaFragment"
+        android:name="com.gabriel.beerapp.view.ui.conta.ContaFragment"
+        android:label="Conta "
+        tools:layout="@layout/fragment_conta">
+        <action
+            android:id="@+id/acaoContaParaEditConta"
+            app:destination="@id/dialogEditConta"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/dialogEditConta"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <dialog
+        android:id="@+id/dialogEditConta"
+        android:name="com.gabriel.beerapp.view.ui.conta.dialog.DialogEditConta"
+        tools:layout="@layout/dialog_edit_conta" >
+        <argument
+            android:name="usuarioView"
+            app:argType="com.gabriel.beerapp.usuario.model.UsuarioView" />
+        <action
+            android:id="@+id/acaoEditContaParaBeers"
+            app:destination="@id/beersFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/dialogEditConta"
+            app:popUpToInclusive="true" />
+    </dialog>
+</navigation>
