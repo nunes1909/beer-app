@@ -6,7 +6,7 @@
 - Para acessar a documentação da Arquitetura do projeto:
   - <a href="https://github.com/nunes1909/beer-app/wiki/Arquitetura">Clique aqui</a>.
 - Para acessar as features e imagens do projeto:
-  - <a href="">Clique aqui</a>.
+  - <a href="https://github.com/nunes1909/beer-app/wiki/Features">Clique aqui</a>.
 
 ## Sobre este projeto:
 A ideia deste aplicativo é:
