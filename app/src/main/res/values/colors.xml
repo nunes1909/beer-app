@@ -12,7 +12,7 @@
     <color name="colorOnSecondary">#696972</color>
 
     <color name="defaultBackground">#373537</color>
-    <color name="defaultImagesBackground">#5A5A66</color>
+    <color name="defaultImagesBackground">#4E4B4E</color>
     <color name="defaultColorHint">#c1c2c4</color>
     <color name="defaultColorTitle">#FF9800</color>
 </resources>
