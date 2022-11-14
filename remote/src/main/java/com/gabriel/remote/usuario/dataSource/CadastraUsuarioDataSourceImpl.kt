@@ -5,7 +5,7 @@ import com.gabriel.data.usuario.model.UsuarioData
 import com.gabriel.remote.usuario.validate.ValidaUsuarioFirebase
 import com.gabriel.strategy.resource.ResourceState
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.coroutines.runBlocking
+import com.google.firebase.auth.ktx.userProfileChangeRequest
 
 class CadastraUsuarioDataSourceImpl(
     private val firebaseAuth: FirebaseAuth,

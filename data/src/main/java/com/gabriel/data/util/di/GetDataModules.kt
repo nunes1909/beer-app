@@ -6,14 +6,18 @@ import com.gabriel.data.beer.mapper.BeerDataMapper
 import com.gabriel.data.beer.repository.*
 import com.gabriel.data.usuario.dataStore.AutenticaUsuarioDataStore
 import com.gabriel.data.usuario.dataStore.CadastraUsuarioDataStore
+import com.gabriel.data.usuario.dataStore.UpdateProfileDataStore
 import com.gabriel.data.usuario.dataStoreImpl.AutenticaUsuarioDataStoreImpl
 import com.gabriel.data.usuario.dataStoreImpl.CadastraUsuarioDataStoreImpl
+import com.gabriel.data.usuario.dataStoreImpl.UpdateProfileDataStoreImpl
 import com.gabriel.data.usuario.mapper.UsuarioDataMapper
 import com.gabriel.data.usuario.repository.AutenticaUsuarioRepositoryImpl
 import com.gabriel.data.usuario.repository.CadastraUsuarioRepositoryImpl
+import com.gabriel.data.usuario.repository.UpdateProfileRepositoryImpl
 import com.gabriel.domain.beer.repository.*
 import com.gabriel.domain.usuario.repository.AutenticaUsuarioRepository
 import com.gabriel.domain.usuario.repository.CadastraUsuarioRepository
+import com.gabriel.domain.usuario.repository.UpdateProfileRepository
 import org.koin.dsl.module
 
 fun getDataModules() = module {
@@ -28,6 +32,9 @@ fun getDataModules() = module {
     }
     factory<AutenticaUsuarioDataStore> {
         AutenticaUsuarioDataStoreImpl(dataSource = get())
+    }
+    factory<UpdateProfileDataStore> {
+        UpdateProfileDataStoreImpl(dataSource = get())
     }
     factory<GetAllBeersDataStore> {
         GetAllBeersDataStoreImpl(dataSource = get())
@@ -55,6 +62,12 @@ fun getDataModules() = module {
     }
     factory<AutenticaUsuarioRepository> {
         AutenticaUsuarioRepositoryImpl(
+            dataStore = get(),
+            mapper = get()
+        )
+    }
+    factory<UpdateProfileRepository> {
+        UpdateProfileRepositoryImpl(
             dataStore = get(),
             mapper = get()
         )
