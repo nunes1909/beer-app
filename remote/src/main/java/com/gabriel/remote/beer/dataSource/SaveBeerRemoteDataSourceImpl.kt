@@ -1,10 +1,13 @@
 package com.gabriel.remote.beer.dataSource
 
+import android.util.Log
 import com.gabriel.data.beer.dataSource.SaveBeerRemoteDataSource
 import com.gabriel.data.beer.model.BeerData
 import com.gabriel.remote.beer.mapper.BeerRemoteMapper
 import com.gabriel.strategy.constants.ConstantsUtil.BEER_ID
 import com.gabriel.strategy.constants.ConstantsUtil.COLECAO_FAVORITOS
+import com.gabriel.strategy.constants.ConstantsUtil.MSG_SAVE_BEERS_DS
+import com.gabriel.strategy.constants.ConstantsUtil.TAG_SAVE_BEERS_DS
 import com.gabriel.strategy.constants.ConstantsUtil.USUARIO_ID
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -28,6 +31,9 @@ class SaveBeerRemoteDataSourceImpl(
                 if (documents.isEmpty) {
                     colecao.add(beerRemote)
                 }
+            }
+            .addOnFailureListener { exception ->
+                Log.e(TAG_SAVE_BEERS_DS, MSG_SAVE_BEERS_DS, exception)
             }
     }
 }
