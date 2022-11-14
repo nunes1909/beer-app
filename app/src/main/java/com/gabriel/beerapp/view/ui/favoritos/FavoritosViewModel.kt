@@ -18,6 +18,7 @@ class FavoritosViewModel(
     private val deleteBeerUseCase: DeleteBeerUseCase
 ) : ViewModel() {
 
+    // region get fav
     private val _favoritos =
         MutableStateFlow<ResourceState<List<BeerView>>>(ResourceState.Loading())
     val favoritos: StateFlow<ResourceState<List<BeerView>>> = _favoritos
@@ -35,8 +36,11 @@ class FavoritosViewModel(
         }
         return ResourceState.Error(cod = resource.cod, message = resource.message)
     }
+    // endregion get fav
 
+    // region delete fav
     fun delete(beerView: BeerView) = viewModelScope.launch {
         deleteBeerUseCase.deleteBeer(beerView.id!!)
     }
+    // endregion delete fav
 }

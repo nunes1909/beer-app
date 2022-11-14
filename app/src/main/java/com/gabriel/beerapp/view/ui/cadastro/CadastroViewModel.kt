@@ -15,6 +15,7 @@ class CadastroViewModel(
     private val cadastraUsuarioUseCase: CadastraUsuarioUseCase
 ) : ViewModel() {
 
+    // region cadastro
     private val _cadastra = MutableStateFlow<ResourceState<Boolean>>(ResourceState.Empty())
     val cadastra: StateFlow<ResourceState<Boolean>> = _cadastra
 
@@ -22,4 +23,5 @@ class CadastroViewModel(
         val usuario = mapper.mapToDomain(usuarioView)
         _cadastra.value = cadastraUsuarioUseCase.cadastraUsuario(usuario)
     }
+    // endregion cadastro
 }

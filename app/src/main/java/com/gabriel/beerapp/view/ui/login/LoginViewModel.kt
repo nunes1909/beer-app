@@ -15,6 +15,7 @@ class LoginViewModel(
     private val autenticaUsuarioUseCase: AutenticaUsuarioUseCase
 ) : ViewModel() {
 
+    // region autentica
     private val _autentica = MutableStateFlow<ResourceState<Boolean>>(ResourceState.Empty())
     val autentica: StateFlow<ResourceState<Boolean>> = _autentica
 
@@ -22,4 +23,5 @@ class LoginViewModel(
         val usuario = mapper.mapToDomain(usuarioView)
         _autentica.value = autenticaUsuarioUseCase.autenticaUsuario(usuario)
     }
+    // endregion autentica
 }

@@ -22,11 +22,9 @@ class DetalhesViewModel(
     private val deleteBeerUseCase: DeleteBeerUseCase
 ) : ViewModel() {
 
+    // region get semelhantes
     private val _list = MutableStateFlow<ResourceState<List<BeerView>>>(ResourceState.Loading())
     val list: StateFlow<ResourceState<List<BeerView>>> = _list
-
-    private val _exists = MutableStateFlow<Boolean>(false)
-    val exists: StateFlow<Boolean> = _exists
 
     fun getAll(query: String? = null) = viewModelScope.launch {
         val primeiroNome = resolvePrimeiroNome(query)
@@ -47,17 +45,27 @@ class DetalhesViewModel(
         }
         return ResourceState.Error(cod = resource.cod, message = resource.message)
     }
+    // endregion get semelhantes
 
+    // region save fav
     fun save(beerView: BeerView) = viewModelScope.launch {
         val beer = mapper.mapToDomain(beerView)
         saveBeerUseCase.saveBeer(beer)
     }
+    // endregion save fav
 
+    // region delete fav
     fun delete(beerView: BeerView) = viewModelScope.launch {
         deleteBeerUseCase.deleteBeer(beerView.id!!)
     }
+    // endregion delete fav
+
+    // region verify if exists
+    private val _exists = MutableStateFlow<Boolean>(false)
+    val exists: StateFlow<Boolean> = _exists
 
     fun verifyIfExists(beerId: Int) = viewModelScope.launch {
         _exists.value = verifyIfExistsUseCase.verifyIfExists(beerId)
     }
+    // endregion verify if exists
 }
