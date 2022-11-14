@@ -43,10 +43,12 @@ class CadastroFragment : BaseFragmentOut<FragmentCadastroBinding, CadastroViewMo
         val senha = etSenha.text?.trim().toString()
         val confirmaSenha = etConfirmaSenha.text?.trim().toString()
 
-        when (val resource =
-            ValidaCadastro().validaCamposFormulario(email, senha, confirmaSenha)) {
+        val resource = ValidaCadastro()
+            .validaCamposFormulario(email = email, senha = senha, confirmaSenha = confirmaSenha)
+
+        when (resource) {
             is ResourceState.Success -> {
-                viewModel.cadastraUsuario(UsuarioView(email, senha))
+                viewModel.cadastraUsuario(UsuarioView(email = email, senha = senha))
             }
             else -> {
                 snack(requireView(), resource.message!!)

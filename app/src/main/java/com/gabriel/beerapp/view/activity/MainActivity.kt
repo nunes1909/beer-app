@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         navController = navHostFragment.navController
 
+        // Define o titulo do fragment com o valor da label
         navController.addOnDestinationChangedListener { _, navDestination, _ ->
             title = navDestination.label
         }

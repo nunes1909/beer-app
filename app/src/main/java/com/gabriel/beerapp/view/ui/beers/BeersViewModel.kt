@@ -20,6 +20,7 @@ class BeersViewModel(
         getAll()
     }
 
+    // region get all beers
     private val _list = MutableStateFlow<ResourceState<List<BeerView>>>(ResourceState.Loading())
     val list: StateFlow<ResourceState<List<BeerView>>> = _list
 
@@ -36,4 +37,5 @@ class BeersViewModel(
         }
         return ResourceState.Error(cod = resource.cod, message = resource.message)
     }
+    // endregion get all beers
 }

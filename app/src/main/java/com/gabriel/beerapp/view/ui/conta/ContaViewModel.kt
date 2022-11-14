@@ -17,12 +17,10 @@ class ContaViewModel(
     private val updateProfileUseCase: UpdateProfileUseCase
 ) : ViewModel() {
 
-    init {
-
-    }
-
+    // region update profile
     fun updateProfile(usuarioView: UsuarioView) = viewModelScope.launch {
         val usuario = mapper.mapToDomain(usuarioView)
         updateProfileUseCase.updateProfile(usuario)
     }
+    // endregion update profile
 }

@@ -25,6 +25,7 @@ class FavoritosFragment : BaseFragmentIn<FragmentFavoritosBinding, FavoritosView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.getFavoritos()
         configuraRecycler()
         configuraClickAdapter()
         observerFavoritos()

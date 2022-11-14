@@ -22,14 +22,12 @@ data class BeerRemote(
     @SerializedName("image_url")
     val imageUrl: String? = null,
 
-    // porcentagem alcool
     @SerializedName("abv")
     val abv: Double? = null,
 
     @SerializedName("food_pairing")
     val foodPairing: List<String>? = null,
 
-    // dicas cervejeiros
     @SerializedName("brewers_tips")
     val brewersTips: String? = null,
 

@@ -3,12 +3,15 @@ package com.gabriel.remote.usuario.validate
 import com.gabriel.strategy.resource.ResourceState
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class ValidaUsuarioFirebase {
-    suspend fun validaTask(task: Task<AuthResult>, auth: Boolean): ResourceState<Boolean> {
-        delay(timeMillis = 2000)
-        return if (task.isComplete && task.isSuccessful && task.exception == null) {
+    fun validaTask(task: Task<AuthResult>, auth: Boolean): ResourceState<Boolean> {
+        CoroutineScope(IO).launch { delay(timeMillis = 2000) }
+        return if (task.isSuccessful) {
             ResourceState.Default(data = true)
         } else {
             val mensagem = if (auth) {
