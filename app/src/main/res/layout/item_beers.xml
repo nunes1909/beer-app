@@ -10,13 +10,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorOnSecondary">
 
         <ImageView
             android:id="@+id/ivBannerItemBeer"
             android:layout_width="0dp"
             android:layout_height="170dp"
-            android:background="#c1c1c1"
+            android:background="@color/defaultImagesBackground"
             android:contentDescription="@string/imagem_item_beers"
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
@@ -30,13 +31,13 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:textAlignment="center"
-            app:layout_constraintVertical_bias="0.2"
-            android:textColor="#FF9800"
+            android:textColor="@color/defaultColorTitle"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/tvDescriptionItemBeer"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ivBannerItemBeer"
+            app:layout_constraintVertical_bias="0.2"
             app:layout_constraintVertical_chainStyle="packed"
             tools:text="Polar" />
 
@@ -46,6 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:textAlignment="center"
+            android:textColor="@color/defaultColorHint"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/tvTitleItemBeer"

@@ -13,6 +13,7 @@
         android:layout_margin="12dp"
         app:endIconDrawable="@drawable/ic_action_delete"
         app:endIconMode="clear_text"
+        android:textColorHint="@color/defaultColorHint"
         app:layout_constraintBottom_toTopOf="@id/rvBeers"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,6 +26,7 @@
             android:hint="@string/pesquise_cerveja"
             android:imeOptions="actionSearch"
             android:inputType="textCapWords"
+            android:textColor="@color/white"
             android:textSize="18sp"
             tools:text="Polar" />
     </com.google.android.material.textfield.TextInputLayout>

@@ -19,13 +19,14 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@color/colorOnSecondary">
 
                 <ImageView
                     android:id="@+id/ivDetalhes"
                     android:layout_width="0dp"
                     android:layout_height="200dp"
-                    android:background="#c1c1c1"
+                    android:background="@color/defaultImagesBackground"
                     android:contentDescription="@string/imagem_detalhes"
                     android:scaleType="fitCenter"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -38,6 +39,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="12sp"
+                    android:textColor="@color/defaultColorTitle"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@id/ivDetalhes"
@@ -50,6 +52,8 @@
                     android:id="@+id/tvTaglineDetalhes"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/defaultColorHint"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@id/tvTitleDetalhes"
                     app:layout_constraintStart_toStartOf="@id/tvTitleDetalhes"
                     app:layout_constraintTop_toBottomOf="@id/tvTitleDetalhes"
@@ -61,6 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
+                    android:textColor="@color/defaultColorHint"
                     app:layout_constraintEnd_toEndOf="@id/tvTaglineDetalhes"
                     app:layout_constraintStart_toStartOf="@id/tvTaglineDetalhes"
                     app:layout_constraintTop_toBottomOf="@id/tvTaglineDetalhes"
@@ -82,6 +87,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
+                    android:textColor="@color/defaultColorHint"
                     app:layout_constraintBottom_toBottomOf="@+id/tvLabelFabricado"
                     app:layout_constraintStart_toEndOf="@+id/tvLabelFabricado"
                     app:layout_constraintTop_toTopOf="@+id/tvLabelFabricado"
@@ -103,6 +109,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
+                    android:textColor="@color/defaultColorHint"
                     app:layout_constraintBottom_toBottomOf="@+id/tvLabelTeor"
                     app:layout_constraintStart_toEndOf="@+id/tvLabelTeor"
                     app:layout_constraintTop_toTopOf="@+id/tvLabelTeor"
@@ -125,6 +132,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
+                    android:textColor="@color/defaultColorHint"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/tvLabelDicasComidas"
                     app:layout_constraintTop_toTopOf="@+id/tvLabelDicasComidas"
@@ -147,6 +155,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
+                    android:textColor="@color/defaultColorHint"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/tvLabelDicasCervejeiros"
                     app:layout_constraintTop_toTopOf="@+id/tvLabelDicasCervejeiros"
@@ -158,11 +167,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:text="@string/favoritar"
-                    android:textStyle="bold"
                     android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/tvLabelSemelhantes"
                     app:layout_constraintStart_toStartOf="@+id/tvLabelDicasCervejeiros"
-                    app:layout_constraintTop_toBottomOf="@+id/tvDicasCervejeiros"
-                    app:layout_constraintBottom_toTopOf="@id/tvLabelSemelhantes"/>
+                    app:layout_constraintTop_toBottomOf="@+id/tvDicasCervejeiros" />
 
                 <TextView
                     android:id="@+id/tvLabelSemelhantes"
@@ -171,6 +180,7 @@
                     android:layout_marginTop="26dp"
                     android:layout_marginBottom="8dp"
                     android:text="@string/semelhantes"
+                    android:textColor="@color/black"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/tvLabelDicasCervejeiros"

@@ -10,13 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:backgroundTint="@color/defaultImagesBackground"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         app:layout_constraintBottom_toTopOf="@id/containerEditarDadosConta"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
         app:layout_constraintVertical_chainStyle="packed">
 
         <LinearLayout
@@ -30,7 +31,7 @@
                 android:id="@+id/tvNomeConta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/defaultColorTitle"
                 android:textSize="26sp"
                 android:textStyle="bold"
                 tools:text="Gabriel Nunes" />
@@ -39,7 +40,9 @@
                 android:id="@+id/tvEmailConta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/defaultColorHint"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 tools:text="gnunes1909@gmail.com" />
         </LinearLayout>
 
@@ -51,6 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/defaultImagesBackground"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"

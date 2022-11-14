@@ -20,6 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:textColorHint="@color/defaultColorHint"
                 app:layout_constraintBottom_toTopOf="@+id/containerEtLoginSenha"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -32,6 +33,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/digite_email"
                     android:inputType="textEmailAddress"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
                     tools:text="teste@teste.com" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -42,6 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:textColorHint="@color/defaultColorHint"
                 app:endIconMode="password_toggle"
                 app:layout_constraintBottom_toTopOf="@+id/btnLoginLogar"
                 app:layout_constraintEnd_toEndOf="@+id/containerEtLoginEmail"
@@ -54,6 +57,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/digite_senha"
                     android:inputType="numberPassword"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
                     tools:text="teste@teste.com" />
             </com.google.android.material.textfield.TextInputLayout>
