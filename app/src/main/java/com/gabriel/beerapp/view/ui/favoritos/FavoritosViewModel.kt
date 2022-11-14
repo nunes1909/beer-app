@@ -18,10 +18,6 @@ class FavoritosViewModel(
     private val deleteBeerUseCase: DeleteBeerUseCase
 ) : ViewModel() {
 
-    init {
-        getFavoritos()
-    }
-
     private val _favoritos =
         MutableStateFlow<ResourceState<List<BeerView>>>(ResourceState.Loading())
     val favoritos: StateFlow<ResourceState<List<BeerView>>> = _favoritos
