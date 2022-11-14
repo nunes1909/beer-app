@@ -15,7 +15,8 @@ class BeerDataMapper : DataMapper<BeerData, Beer> {
             imageUrl = type.imageUrl,
             abv = type.abv,
             foodPairing = type.foodPairing,
-            brewersTips = type.brewersTips
+            brewersTips = type.brewersTips,
+            usuarioId = type.usuarioId
         )
     }
 
@@ -29,7 +30,8 @@ class BeerDataMapper : DataMapper<BeerData, Beer> {
             imageUrl = type.imageUrl,
             abv = type.abv,
             foodPairing = type.foodPairing,
-            brewersTips = type.brewersTips
+            brewersTips = type.brewersTips,
+            usuarioId = type.usuarioId
         )
     }
 }

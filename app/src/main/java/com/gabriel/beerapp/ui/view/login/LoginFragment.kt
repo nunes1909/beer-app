@@ -11,17 +11,16 @@ import com.gabriel.beerapp.databinding.FragmentLoginBinding
 import com.gabriel.beerapp.ui.view.cadastro.CadastroFragmentDirections
 import com.gabriel.beerapp.ui.view.login.validaLogin.ValidaLogin
 import com.gabriel.beerapp.usuario.model.UsuarioView
+import com.gabriel.beerapp.util.base.BaseFragmentOut
 import com.gabriel.beerapp.util.extensions.snack
 import com.gabriel.beerapp.util.extensions.toast
 import com.gabriel.strategy.resource.ResourceState
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class LoginFragment : Fragment() {
+class LoginFragment : BaseFragmentOut<FragmentLoginBinding, LoginViewModel>() {
 
-    private val binding by lazy { FragmentLoginBinding.inflate(layoutInflater) }
-    private val controller by lazy { findNavController() }
-    private val viewModel: LoginViewModel by viewModel()
+    override val viewModel: LoginViewModel by viewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -81,9 +80,9 @@ class LoginFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(
+    override fun getViewBinding(
         inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View = binding.root
+        container: ViewGroup?
+    ): FragmentLoginBinding =
+        FragmentLoginBinding.inflate(layoutInflater, container, false)
 }

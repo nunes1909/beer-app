@@ -4,6 +4,7 @@ import com.gabriel.beerapp.beer.mapper.BeerViewMapper
 import com.gabriel.beerapp.ui.view.beers.BeersViewModel
 import com.gabriel.beerapp.ui.view.cadastro.CadastroViewModel
 import com.gabriel.beerapp.ui.view.detalhes.DetalhesViewModel
+import com.gabriel.beerapp.ui.view.favoritos.FavoritosViewModel
 import com.gabriel.beerapp.ui.view.login.LoginViewModel
 import com.gabriel.beerapp.usuario.mapper.UsuarioViewMapper
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -19,13 +20,16 @@ fun getViewModules() = module {
     viewModel {
         BeersViewModel(
             mapper = get(),
-            getAllBeersUseCase = get()
+            getAllBeersUseCase = get(),
         )
     }
     viewModel {
         DetalhesViewModel(
             mapper = get(),
-            getAllBeersUseCase = get()
+            getAllBeersUseCase = get(),
+            verifyIfExistsUseCase = get(),
+            saveBeerUseCase = get(),
+            deleteBeerUseCase = get()
         )
     }
     viewModel {
@@ -38,6 +42,13 @@ fun getViewModules() = module {
         LoginViewModel(
             mapper = get(),
             autenticaUsuarioUseCase = get()
+        )
+    }
+    viewModel {
+        FavoritosViewModel(
+            mapper = get(),
+            getBeersFavUseCase = get(),
+            deleteBeerUseCase = get()
         )
     }
     // endregion

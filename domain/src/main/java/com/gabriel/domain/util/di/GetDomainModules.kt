@@ -13,9 +13,9 @@ fun getDomainModules() = module {
     factory<AutenticaUsuarioUseCase> { AutenticaUsuarioUseCaseImpl(repository = get()) }
     factory<CadastraUsuarioUseCase> { CadastraUsuarioUseCaseImpl(repository = get()) }
     factory<GetAllBeersUseCase> { GetAllBeersUseCaseImpl(repository = get()) }
-    factory<GetSingleBeerUseCase> { GetSingleBeerUseCaseImpl(repository = get()) }
+    factory<GetBeersFavUseCase> { GetBeersFavUseCaseImpl(repository = get()) }
     factory<SaveBeerUseCase> { SaveBeerUseCaseImpl(repository = get()) }
-    factory<GetStoredBeersUseCase> { GetStoredBeersUseCaseImpl(repository = get()) }
+    factory<VerifyIfExistsUseCase> { VerifyIfExistsUseCaseImpl(repository = get()) }
     factory<DeleteBeerUseCase> { DeleteBeerUseCaseImpl(repository = get()) }
     // endregion
 }

@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 
 class BeersViewModel(
     private val mapper: BeerViewMapper,
-    private val getAllBeersUseCase: GetAllBeersUseCase
+    private val getAllBeersUseCase: GetAllBeersUseCase,
 ) : ViewModel() {
 
     init {

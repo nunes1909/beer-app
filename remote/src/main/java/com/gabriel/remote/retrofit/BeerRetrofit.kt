@@ -1,7 +1,7 @@
 package com.gabriel.remote.retrofit
 
 import com.gabriel.remote.beer.service.GetAllBeersService
-import com.gabriel.remote.beer.service.GetSingleBeerService
+import com.gabriel.remote.beer.service.GetBeersByIdService
 import com.gabriel.strategy.constants.ConstantsUtil.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -35,8 +35,8 @@ class BeerRetrofit {
         return retrofit.create(GetAllBeersService::class.java)
     }
 
-    fun getSingleBeerService(retrofit: Retrofit): GetSingleBeerService {
-        return retrofit.create(GetSingleBeerService::class.java)
+    fun getSingleBeerService(retrofit: Retrofit): GetBeersByIdService {
+        return retrofit.create(GetBeersByIdService::class.java)
     }
     // endregion
 }

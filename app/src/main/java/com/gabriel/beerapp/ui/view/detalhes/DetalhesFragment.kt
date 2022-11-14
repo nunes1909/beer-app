@@ -10,16 +10,18 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import coil.load
 import com.gabriel.beerapp.databinding.FragmentDetalhesBinding
-import com.gabriel.beerapp.ui.adapters.BeersAdapter
-import com.gabriel.beerapp.util.base.BaseFragment
+import com.gabriel.beerapp.ui.view.beers.adapter.BeersAdapter
+import com.gabriel.beerapp.util.base.BaseFragmentIn
 import com.gabriel.beerapp.util.extensions.rand
 import com.gabriel.beerapp.util.extensions.toast
 import com.gabriel.strategy.constants.ConstantsUtil.TAG_DETALHES_FRAGMENT
 import com.gabriel.strategy.resource.ResourceState
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class DetalhesFragment : BaseFragment<FragmentDetalhesBinding, DetalhesViewModel>() {
+class DetalhesFragment : BaseFragmentIn<FragmentDetalhesBinding, DetalhesViewModel>() {
 
     override val viewModel: DetalhesViewModel by viewModel()
     private val args: DetalhesFragmentArgs by navArgs()
@@ -27,11 +29,14 @@ class DetalhesFragment : BaseFragment<FragmentDetalhesBinding, DetalhesViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.verifyIfExists(args.beerView.id!!)
         configuraRecycler()
         preencheCampos()
+        configuraSave()
         buscaSemelhantes()
         observerSemelhantes()
         configuraClickAdapter()
+        observerSwitch()
     }
 
     private fun configuraRecycler() = with(binding) {
@@ -39,16 +44,18 @@ class DetalhesFragment : BaseFragment<FragmentDetalhesBinding, DetalhesViewModel
         rvDetalhesSemelhantes.layoutManager = GridLayoutManager(requireContext(), 2)
     }
 
-    private fun preencheCampos() = with(binding) {
-        args.beerView.let { beerView ->
-            ivDetalhes.load(beerView.imageUrl)
-            tvTitleDetalhes.text = beerView.name
-            tvTaglineDetalhes.text = beerView.tagline
-            tvDescriptionDetalhes.text = beerView.description
-            tvTeor.text = "${beerView.abv.toString()} %"
-            tvFabricado.text = beerView.firstBrewed
-            tvDicasComidas.text = resolveFraseAtual(beerView.foodPairing)
-            tvDicasCervejeiros.text = beerView.brewersTips
+    private fun preencheCampos() = lifecycleScope.launch {
+        with(binding) {
+            args.beerView.let { beerView ->
+                ivDetalhes.load(beerView.imageUrl)
+                tvTitleDetalhes.text = beerView.name
+                tvTaglineDetalhes.text = beerView.tagline
+                tvDescriptionDetalhes.text = beerView.description
+                tvTeor.text = "${beerView.abv.toString()} %"
+                tvFabricado.text = beerView.firstBrewed
+                tvDicasComidas.text = resolveFraseAtual(beerView.foodPairing)
+                tvDicasCervejeiros.text = beerView.brewersTips
+            }
         }
     }
 
@@ -57,6 +64,16 @@ class DetalhesFragment : BaseFragment<FragmentDetalhesBinding, DetalhesViewModel
             val posicao = rand(0, size - 1)
             foodPairing[posicao]
         } ?: ""
+
+    private fun configuraSave() {
+        binding.swFavoritar.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                viewModel.save(args.beerView)
+            } else {
+                viewModel.delete(args.beerView)
+            }
+        }
+    }
 
     private fun buscaSemelhantes() {
         viewModel.getAll(args.beerView.name)
@@ -85,6 +102,10 @@ class DetalhesFragment : BaseFragment<FragmentDetalhesBinding, DetalhesViewModel
             val action = DetalhesFragmentDirections.acaoSemelhantesParaDetalhes(beerView)
             controller.navigate(action)
         }
+    }
+
+    private fun observerSwitch() = lifecycleScope.launch {
+        viewModel.exists.collect { binding.swFavoritar.isChecked = it }
     }
 
     override fun getViewBinding(

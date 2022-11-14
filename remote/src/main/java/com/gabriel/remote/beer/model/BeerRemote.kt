@@ -1,5 +1,6 @@
 package com.gabriel.remote.beer.model
 
+import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 data class BeerRemote(
@@ -30,5 +31,8 @@ data class BeerRemote(
 
     // dicas cervejeiros
     @SerializedName("brewers_tips")
-    val brewersTips: String? = null
+    val brewersTips: String? = null,
+
+    @Expose(serialize = false)
+    var usuarioId: String? = null
 )

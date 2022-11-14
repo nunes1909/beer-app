@@ -11,5 +11,6 @@ data class BeerData(
     val abv: Double? = null,
     val foodPairing: List<String>? = null,
     // dicas cervejeiros
-    val brewersTips: String? = null
+    val brewersTips: String? = null,
+    val usuarioId: String? = null
 )

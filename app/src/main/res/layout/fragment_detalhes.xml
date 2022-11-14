@@ -152,17 +152,29 @@
                     app:layout_constraintTop_toTopOf="@+id/tvLabelDicasCervejeiros"
                     tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." />
 
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/swFavoritar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/favoritar"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@+id/tvLabelDicasCervejeiros"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDicasCervejeiros"
+                    app:layout_constraintBottom_toTopOf="@id/tvLabelSemelhantes"/>
+
                 <TextView
                     android:id="@+id/tvLabelSemelhantes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="26dp"
                     android:layout_marginBottom="8dp"
-                    android:text="Semelhantes:"
+                    android:text="@string/semelhantes"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/tvLabelDicasCervejeiros"
-                    app:layout_constraintTop_toBottomOf="@+id/tvDicasCervejeiros" />
+                    app:layout_constraintTop_toBottomOf="@+id/swFavoritar" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
