@@ -38,7 +38,6 @@ class GetBeersFavDataSourceImpl(
 
             colecao.get().addOnFailureListener { exception ->
                 Log.e(TAG_GET_BEERS_FAV_DS, MSG_GET_BEERS_FAV_DS, exception)
-                continuation.resumeWith(Result.failure(exception))
             }
         }
     }

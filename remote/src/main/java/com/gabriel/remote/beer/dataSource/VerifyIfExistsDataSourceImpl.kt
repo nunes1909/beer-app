@@ -32,7 +32,6 @@ class VerifyIfExistsDataSourceImpl(
 
             colecao.get().addOnFailureListener { exception ->
                 Log.e(TAG_VERIFY_EXISTS_DS, MSG_VERIFY_EXISTS_DS, exception)
-                continuation.resumeWith(Result.failure(exception))
             }
         }
     }
