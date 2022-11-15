@@ -24,7 +24,6 @@ class AutenticaUsuarioDataSourceImpl(
                 }
                 .addOnFailureListener { exception ->
                     Log.e(TAG_AUTH_USER_DS, MSG_AUTH_USER_DS, exception)
-                    continuation.resumeWith(Result.failure(exception))
                 }
         }
     }
