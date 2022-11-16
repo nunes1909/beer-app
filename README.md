@@ -3,7 +3,7 @@
 ## Índices:
 - Para acessar a Wiki do projeto: 
   - <a href="https://github.com/nunes1909/beer-app/wiki">Clique aqui</a>.
-- Para acessar a documentação da Arquitetura do projeto:
+- Para acessar a Arquitetura do projeto:
   - <a href="https://github.com/nunes1909/beer-app/wiki/Arquitetura">Clique aqui</a>.
 - Para acessar as features do projeto:
   - <a href="https://github.com/nunes1909/beer-app/wiki/Features">Clique aqui</a>.
