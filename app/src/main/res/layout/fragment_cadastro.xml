@@ -87,11 +87,12 @@
                     tools:text="123456" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnCadastrar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:background="@drawable/background_button"
                 android:padding="12dp"
                 android:text="@string/cadastrar"
                 android:textAllCaps="false"
