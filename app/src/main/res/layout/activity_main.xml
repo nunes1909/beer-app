@@ -10,6 +10,7 @@
         android:id="@+id/frameContainerFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="@drawable/background"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
