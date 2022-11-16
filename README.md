@@ -7,7 +7,7 @@
   - <a href="https://github.com/nunes1909/beer-app/wiki/Arquitetura">Clique aqui</a>.
 - Para acessar as features do projeto:
   - <a href="https://github.com/nunes1909/beer-app/wiki/Features">Clique aqui</a>.
-- Para acessar as imagens do projeto:
+- Para acessar a galeria do projeto:
   - <a href="https://github.com/nunes1909/beer-app/wiki/Galeria">Clique aqui</a>.
 
 ## Sobre este projeto:
