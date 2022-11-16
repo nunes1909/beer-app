@@ -13,7 +13,6 @@ import com.gabriel.remote.usuario.dataSource.AutenticaUsuarioDataSourceImpl
 import com.gabriel.remote.usuario.dataSource.CadastraUsuarioDataSourceImpl
 import com.gabriel.remote.usuario.dataSource.UpdateProfileDataSourceImpl
 import com.gabriel.remote.usuario.mapper.UsuarioRemoteMapper
-import com.gabriel.remote.usuario.validate.ValidaUsuarioFirebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -64,8 +63,7 @@ fun getRemoteModules() = module {
     }
     factory<CadastraUsuarioDataSource> {
         CadastraUsuarioDataSourceImpl(
-            firebaseAuth = get(),
-            validaUser = ValidaUsuarioFirebase()
+            firebaseAuth = get()
         )
     }
     factory<UpdateProfileDataSource> {
@@ -75,8 +73,7 @@ fun getRemoteModules() = module {
     }
     factory<AutenticaUsuarioDataSource> {
         AutenticaUsuarioDataSourceImpl(
-            firebaseAuth = get(),
-            validaUser = ValidaUsuarioFirebase()
+            firebaseAuth = get()
         )
     }
     factory<SaveBeerRemoteDataSource> {
