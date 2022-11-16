@@ -9,6 +9,7 @@ import com.gabriel.strategy.resource.ResourceState
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
+import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
 class AutenticaUsuarioDataSourceImpl(private val firebaseAuth: FirebaseAuth) :
@@ -17,15 +18,11 @@ class AutenticaUsuarioDataSourceImpl(private val firebaseAuth: FirebaseAuth) :
         return suspendCoroutine { continuation ->
             firebaseAuth.signInWithEmailAndPassword(usuario.email!!, usuario.senha!!)
                 .addOnSuccessListener {
-                    continuation.resumeWith(
-                        Result.success(ResourceState.Default(data = true))
-                    )
+                    continuation.resume(ResourceState.Default(data = true))
                 }
                 .addOnFailureListener { exception ->
                     val message = catchErrorAuth(exception)
-                    continuation.resumeWith(
-                        Result.success(ResourceState.Default(data = false, message = message))
-                    )
+                    continuation.resume(ResourceState.Default(data = false, message = message))
                     Log.e(TAG_AUTH_USER_DS, MSG_AUTH_USER_DS, exception)
                 }
         }
