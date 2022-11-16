@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -21,6 +21,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:textColorHint="@color/defaultColorHint"
+                app:endIconDrawable="@drawable/ic_action_email"
+                app:endIconMode="custom"
+                app:endIconTint="@color/white"
                 app:layout_constraintBottom_toTopOf="@+id/containerEtLoginSenha"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -46,6 +49,7 @@
                 android:layout_marginTop="16dp"
                 android:textColorHint="@color/defaultColorHint"
                 app:endIconMode="password_toggle"
+                app:endIconTint="@color/white"
                 app:layout_constraintBottom_toTopOf="@+id/btnLoginLogar"
                 app:layout_constraintEnd_toEndOf="@+id/containerEtLoginEmail"
                 app:layout_constraintStart_toStartOf="@+id/containerEtLoginEmail"
@@ -62,7 +66,7 @@
                     tools:text="teste@teste.com" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnLoginLogar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -71,12 +75,13 @@
                 android:text="@string/logar"
                 android:textAllCaps="false"
                 android:textSize="16sp"
+                android:background="@drawable/background_button"
                 app:layout_constraintBottom_toTopOf="@+id/btnLoginCadastrar"
                 app:layout_constraintEnd_toEndOf="@+id/containerEtLoginSenha"
                 app:layout_constraintStart_toStartOf="@+id/containerEtLoginSenha"
                 app:layout_constraintTop_toBottomOf="@+id/containerEtLoginSenha" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnLoginCadastrar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -84,6 +89,7 @@
                 android:padding="12dp"
                 android:text="@string/cadastrar"
                 android:textAllCaps="false"
+                android:background="@drawable/background_button"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/btnLoginLogar"
@@ -92,4 +98,4 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-</androidx.core.widget.NestedScrollView>
+</ScrollView>
