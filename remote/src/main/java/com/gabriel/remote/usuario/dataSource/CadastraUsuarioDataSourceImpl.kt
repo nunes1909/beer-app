@@ -7,6 +7,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
+import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
 class CadastraUsuarioDataSourceImpl(private val firebaseAuth: FirebaseAuth) :
@@ -15,17 +16,11 @@ class CadastraUsuarioDataSourceImpl(private val firebaseAuth: FirebaseAuth) :
         return suspendCoroutine { continuation ->
             firebaseAuth.createUserWithEmailAndPassword(usuario.email!!, usuario.senha!!)
                 .addOnSuccessListener {
-                    continuation.resumeWith(
-                        Result.success(ResourceState.Default(data = true)
-                            .also { firebaseAuth.signOut() }
-                        )
-                    )
+                    continuation.resume(ResourceState.Default(data = true))
                 }
                 .addOnFailureListener { exception ->
                     val message = catchErrorCadastro(exception)
-                    continuation.resumeWith(
-                        Result.success(ResourceState.Default(data = false, message = message))
-                    )
+                    continuation.resume(ResourceState.Default(data = false, message = message))
                 }
         }
     }
