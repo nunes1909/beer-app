@@ -5,8 +5,10 @@
   - <a href="https://github.com/nunes1909/beer-app/wiki">Clique aqui</a>.
 - Para acessar a documentação da Arquitetura do projeto:
   - <a href="https://github.com/nunes1909/beer-app/wiki/Arquitetura">Clique aqui</a>.
-- Para acessar as features e imagens do projeto:
+- Para acessar as features do projeto:
   - <a href="https://github.com/nunes1909/beer-app/wiki/Features">Clique aqui</a>.
+- Para acessar as imagens do projeto:
+  - <a href="https://github.com/nunes1909/beer-app/wiki/Galeria">Clique aqui</a>.
 
 ## Sobre este projeto:
 A ideia deste aplicativo é:
@@ -14,6 +16,7 @@ A ideia deste aplicativo é:
 - Implementar CRUD de usuários e cervejas favoritas.
 - Praticar o conceito de Modularização Android.
 - Praticar o conceito de Clean Architecture e MVVM.
+- Praticar integração de Apps Android com Firebase.
 
 ## Motivação:
 Este aplicativo faz parte do meu portfólio pessoal e eu o desenvolvi visando os meus estudos e a prática dos meus conhecimentos. Caso você faça o download deste repositório e observe pontos de melhoria, seja no código, estrutura, UI/UX, etc... Ou queira apenas dar um simples feedback eu ficarei extremamente feliz. Estou aqui para aprender e me tornar um desenvolvedor cada vez melhor. 😁
