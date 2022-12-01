@@ -15,7 +15,7 @@ A ideia deste aplicativo é:
 - Consumir a <a href="https://punkapi.com/documentation/v2">Punk Api</a> e listar cervejas.
 - Implementar CRUD de usuários e cervejas favoritas.
 - Praticar o conceito de Modularização Android.
-- Praticar o conceito de Clean Architecture e MVVM.
+- Praticar o conceito de Clean Architecture.
 - Praticar integração de Apps Android com Firebase.
 
 ## Motivação:
