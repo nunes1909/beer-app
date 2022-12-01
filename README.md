@@ -24,7 +24,7 @@ Este aplicativo faz parte do meu portfólio pessoal e eu o desenvolvi visando os
 Você pode entrar em contato comigo através do <a href="https://www.linkedin.com/in/nunes1909/">Linkedin</a> e também através do e-mail: <a href="mailto:gnunes1909@gmail.com">gnunes1909@gmail.com</a>
 
 ## Observações:
-- Este projeto ainda não da suporte para Dark Theme.
+- Este projeto ainda não possui suporte para Dark Theme.
 - Este projeto segue uma arquitetura propria.
 
 ## Funcionalidades:
