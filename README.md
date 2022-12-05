@@ -1,21 +1,17 @@
 # Beer App
 
-## Índices:
-- Para acessar a Wiki do projeto: 
-  - <a href="https://github.com/nunes1909/beer-app/wiki">Clique aqui</a>.
-- Para acessar a documentação da Arquitetura do projeto:
-  - <a href="https://github.com/nunes1909/beer-app/wiki/Arquitetura">Clique aqui</a>.
-- Para acessar as features do projeto:
-  - <a href="https://github.com/nunes1909/beer-app/wiki/Features">Clique aqui</a>.
-- Para acessar as imagens do projeto:
-  - <a href="https://github.com/nunes1909/beer-app/wiki/Galeria">Clique aqui</a>.
+## Sumário:
+- Para acessar a Wiki do projeto: <a href="https://github.com/nunes1909/beer-app/wiki">Clique aqui</a>.
+- Para acessar a Arquitetura do projeto: <a href="https://github.com/nunes1909/beer-app/wiki/Arquitetura">Clique aqui</a>.
+- Para acessar as features do projeto: <a href="https://github.com/nunes1909/beer-app/wiki/Features">Clique aqui</a>.
+- Para acessar a galeria do projeto: <a href="https://github.com/nunes1909/beer-app/wiki/Galeria">Clique aqui</a>.
 
 ## Sobre este projeto:
 A ideia deste aplicativo é:
 - Consumir a <a href="https://punkapi.com/documentation/v2">Punk Api</a> e listar cervejas.
 - Implementar CRUD de usuários e cervejas favoritas.
 - Praticar o conceito de Modularização Android.
-- Praticar o conceito de Clean Architecture e MVVM.
+- Praticar o conceito de Clean Architecture.
 - Praticar integração de Apps Android com Firebase.
 
 ## Motivação:
@@ -24,7 +20,7 @@ Este aplicativo faz parte do meu portfólio pessoal e eu o desenvolvi visando os
 Você pode entrar em contato comigo através do <a href="https://www.linkedin.com/in/nunes1909/">Linkedin</a> e também através do e-mail: <a href="mailto:gnunes1909@gmail.com">gnunes1909@gmail.com</a>
 
 ## Observações:
-- Este projeto ainda não da suporte para Dark Theme.
+- Este projeto ainda não possui suporte para Dark Theme.
 - Este projeto segue uma arquitetura propria.
 
 ## Funcionalidades:
